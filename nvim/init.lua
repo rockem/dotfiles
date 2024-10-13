@@ -1,1 +1,1 @@
-require("rockem.config.lazy")
+require("rockem.config")

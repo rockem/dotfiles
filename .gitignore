@@ -1,6 +1,8 @@
-/*
-
-!.gitignore
-!kitty/
-!tmux/
-!nvim/
+.DS_Store
+*.bak
+xbuild/
+yarn/
+stetic/
+flutter/
+configstore/
+gh/
