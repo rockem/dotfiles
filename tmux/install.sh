@@ -1,6 +1,9 @@
 set -e
 
+# Install TPM
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Install catppuccin
-mkdir $TMUX_PLUGIN_MANAGER_PATH/catppuccin
-git clone https://github.com/catppuccin/tmux.git ~/$TMUX_PLUGIN_MANAGER_PATH/catppuccin/tmux
+mkdir ~/.tmux/plugins/catppuccin
+git clone https://github.com/catppuccin/tmux.git ~/.tmux/plugins/catppuccin/tmux
 
