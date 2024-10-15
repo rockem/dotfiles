@@ -31,6 +31,7 @@ opt.signcolumn = "yes" -- Show sign column so that text doesn't shift
 opt.scrolloff = 8
 opt.isfname:append("@-@")
 opt.colorcolumn="100"
+opt.shortmess:append("I")
 
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
