@@ -30,3 +30,5 @@ require("lazy").setup({
 })
 
 vim.cmd.colorscheme "catppuccin-mocha"
+vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Show Lazy" })
+
