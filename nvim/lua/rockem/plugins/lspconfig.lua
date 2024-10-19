@@ -99,13 +99,32 @@ return {
       end,
       ["pyright"] = function()
         lspconfig["pyright"].setup({
-        capabilities = capabilities,
-        before_init = function(_, config)
-          local default_venv_path = "venv/bin/python"
-          config.settings.python.pythonPath = default_venv_path
-        end,
-      })
-    end,
+          capabilities = capabilities,
+          filetypes = { "python" },
+          python = {
+            analysis = {
+              ignore = { "*" }
+            }
+          },
+          before_init = function(_, config)
+            local default_venv_path = "venv/bin/python"
+            config.settings.python.pythonPath = default_venv_path
+          end,
+        })
+      end,
+      ["ruff"] = function()
+        lspconfig["ruff"].setup({
+          capabilities = capabilities,
+          filetypes = { "python" },
+          init_options = {
+            settings = {
+              ruff = {
+              interpreter = { "venv/bin/python" }
+              }
+            }
+          }
+        })
+      end,
     })
   end,
 }
