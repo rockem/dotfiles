@@ -47,6 +47,7 @@ opt.swapfile = false -- turn off swapfile
 opt.backup = false
 opt.autoread = true -- Turn auto read for changed files
 opt.history=50
+opt.autowriteall = true
 
 opt.shada="!,'20,<50,s10,h"
 
