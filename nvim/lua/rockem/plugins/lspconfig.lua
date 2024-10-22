@@ -1,4 +1,8 @@
 local function on_attach(ev)
+  if ev.name == 'ruff' then
+    -- Disable hover in favor of Pyright
+    ev.server_capabilities.hoverProvider = false
+  end
   -- Buffer local mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local opts = { buffer = ev.buf, silent = true }
@@ -101,10 +105,15 @@ return {
         lspconfig["pyright"].setup({
           capabilities = capabilities,
           filetypes = { "python" },
-          python = {
-            analysis = {
-              ignore = { "*" }
-            }
+          settings = {
+            pyright = {
+              disableOrganizeImports = true
+            },
+            python = {
+              analysis = {
+                ignore = { "*" }
+              }
+            },
           },
           before_init = function(_, config)
             local default_venv_path = "venv/bin/python"
