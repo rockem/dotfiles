@@ -9,7 +9,8 @@ map("n", "<C-Tab>", ":b#<CR>")
 
 -- Git 
 map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview git changes" })
-map("n", "<leader>gs", "<cmd>Git<CR>", { desc = "Get status" })
+map("n", "<leader>gs", "<cmd>Git<CR>", { desc = "Git status" })
+map("n", "<leader>gb", "<cmd>Git blame<CR>", { desc = "Git blame" })
 
 -- Fuzzy find
 map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Find files in cwd" })
