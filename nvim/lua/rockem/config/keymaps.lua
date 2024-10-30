@@ -4,8 +4,11 @@ vim.g.maplocalleader = " "
 
 local map = vim.keymap.set -- for conciseness
 
+vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Show Lazy" })
+
 -- Buffer
 map("n", "<C-Tab>", ":b#<CR>")
+map("i", "<C-Tab>", ":b#<CR>")
 
 -- Git
 map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview git changes" })
@@ -23,6 +26,6 @@ map(
 	"<cmd>Telescope find_files search_dirs=~/.config/nvim<CR>",
 	{ desc = "Find config files" }
 )
-map("n", "<leader>fb", "<cmd>Telescope buffers", { desc = "Find buffers" })
+map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Find buffers" })
 
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "File explorer" })

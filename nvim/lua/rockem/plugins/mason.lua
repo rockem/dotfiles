@@ -1,32 +1,33 @@
 return {
-  "williamboman/mason.nvim",
-  dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-  },
-  config = function()
-    local mason = require("mason")
-    local mason_lspconfig = require("mason-lspconfig")
-    local tool_installer = require("mason-tool-installer")
+	"williamboman/mason.nvim",
+	dependencies = {
+		"williamboman/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+	},
+	config = function()
+		local mason = require("mason")
+		local mason_lspconfig = require("mason-lspconfig")
+		local tool_installer = require("mason-tool-installer")
 
-    mason.setup({})
+		mason.setup({})
 
-    mason_lspconfig.setup({
-      ensure_installed = {
-        "lua_ls",
-        "pyright",
-        "ruff"
-      },
+		mason_lspconfig.setup({
+			ensure_installed = {
+				"lua_ls",
+				"pyright",
+				"ruff",
+			},
 
-      automatic_installation = true
-    })
+			automatic_installation = true,
+		})
 
-    tool_installer.setup({
-      ensure_installed = {
-        "black",
-        "debugpy",
-        "flake8"
-      }
-    })
-  end,
+		tool_installer.setup({
+			ensure_installed = {
+				"black",
+				"debugpy",
+				"flake8",
+				"dart-debug-adapter",
+			},
+		})
+	end,
 }
