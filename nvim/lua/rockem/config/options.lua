@@ -30,7 +30,7 @@ opt.termguicolors = true
 opt.signcolumn = "yes" -- Show sign column so that text doesn't shift
 opt.scrolloff = 8
 opt.isfname:append("@-@")
-opt.colorcolumn="100"
+opt.colorcolumn = "100"
 opt.shortmess:append("I")
 
 opt.splitright = true -- split vertical window to the right
@@ -46,10 +46,10 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 opt.swapfile = false -- turn off swapfile
 opt.backup = false
 opt.autoread = true -- Turn auto read for changed files
-opt.history=50
+opt.history = 50
 opt.autowriteall = true
 
-opt.shada="!,'20,<50,s10,h"
+opt.shada = "!,'20,<50,s10,h"
 
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
@@ -58,3 +58,5 @@ opt.undofile = true
 opt.wildmode = "longest:full,full"
 opt.wildmenu = true
 
+-- Spell
+opt.spell = true
