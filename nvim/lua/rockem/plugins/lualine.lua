@@ -8,7 +8,7 @@ return {
 		-- configure lualine with modified theme
 		lualine.setup({
 			options = {
-				theme = "ayu_mirage",
+				theme = "auto",
 			},
 			sections = {
 				lualine_c = {
@@ -32,7 +32,7 @@ return {
 							local current_time = os.time()
 							local difference_in_seconds = current_time - target_time
 							local days_passed = math.floor(difference_in_seconds / (60 * 60 * 24))
-							return string.format("\u{1F397}%s Days", days_passed)
+							return string.format("\u{1F397}%s", days_passed)
 						end,
 						color = { fg = "#f9e2af" },
 					},

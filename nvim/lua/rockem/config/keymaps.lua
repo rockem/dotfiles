@@ -6,6 +6,9 @@ local map = vim.keymap.set -- for conciseness
 
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Show Lazy" })
 
+-- Editor
+map("n", "<leader>R", ':<C-u>registers<CR>:normal! "p<Left>', { desc = "Select from register" })
+
 -- Buffer
 map("n", "<C-Tab>", ":b#<CR>")
 map("i", "<C-Tab>", ":b#<CR>")
