@@ -8,6 +8,7 @@ vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Show Lazy" })
 
 -- Editor
 map("n", "<leader>R", ':<C-u>registers<CR>:normal! "p<Left>', { desc = "Select from register" })
+map("n", "<leader>U", ":Telescope undo<CR>", { desc = "Toggle undo tree ui" })
 
 -- Buffer
 map("n", "<C-Tab>", ":b#<CR>")
