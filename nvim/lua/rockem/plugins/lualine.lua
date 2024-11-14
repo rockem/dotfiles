@@ -32,6 +32,7 @@ return {
 							local current_time = os.time()
 							local difference_in_seconds = current_time - target_time
 							local days_passed = math.floor(difference_in_seconds / (60 * 60 * 24))
+								+ 1
 							return string.format("\u{1F397}%s", days_passed)
 						end,
 						color = { fg = "#f9e2af" },
