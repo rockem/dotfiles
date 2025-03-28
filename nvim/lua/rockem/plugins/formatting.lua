@@ -11,6 +11,9 @@ return {
 				markdown = { "prettier" },
 				json = { "prettier" },
 				python = { "isort", "black" },
+				astro = { "prettier" },
+				typescript = { "prettier" },
+				svelte = { "prettier" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

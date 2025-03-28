@@ -16,6 +16,7 @@ return {
 				"lua_ls",
 				"pyright",
 				"ruff",
+				"astro",
 			},
 
 			automatic_installation = true,

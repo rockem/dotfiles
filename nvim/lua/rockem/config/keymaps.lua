@@ -12,11 +12,11 @@ map("n", "<leader>U", ":Telescope undo<CR>", { desc = "Toggle undo tree ui" })
 
 -- Buffer
 map("n", "<C-Tab>", ":b#<CR>")
-map("i", "<C-Tab>", ":b#<CR>")
+map("i", "<C-Tab>", "<esc>:b#<CR>")
 
 -- Git
 map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview git changes" })
-map("n", "<leader>gs", "<cmd>Git<CR>", { desc = "Get status" })
+map("n", "<leader>gs", "<cmd>LazyGit<CR>", { desc = "Get status" })
 map("n", "<leader>gb", "<cmd>Git blame<CR>", { desc = "Git blame" })
 
 -- Fuzzy find

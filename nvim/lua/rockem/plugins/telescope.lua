@@ -19,11 +19,11 @@ return {
 					local tail = utils.path_tail(path)
 					return string.format("%s (%s)", tail, utils.path_smart(path))
 				end,
-				layout_strategy = "horizontal",
-				layout_config = {
-					width = 0.95,
-					preview_width = 0.45,
-				},
+				-- layout_strategy = "horizontal",
+				-- layout_config = {
+				-- 	width = 0.95,
+				-- 	preview_width = 0.45,
+				-- },
 				mappings = {
 					i = {
 						["<C-h>"] = actions.which_key,
