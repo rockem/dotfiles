@@ -86,6 +86,15 @@ return {
 				capabilities = capabilities,
 				filetypes = { "astro" },
 			}),
+			lspconfig["ts_ls"].setup({
+				capabilities = capabilities,
+				filetypes = { "typescript" },
+				settings = {
+					completion = {
+						completionFunctionCalls = true,
+					},
+				},
+			}),
 		})
 	end,
 }

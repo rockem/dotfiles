@@ -17,6 +17,7 @@ return {
 				"pyright",
 				"ruff",
 				"astro",
+				"ts_ls",
 			},
 
 			automatic_installation = true,
