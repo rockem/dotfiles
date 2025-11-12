@@ -161,5 +161,4 @@ export NVM_DIR=~/.nvm
 # Created by `pipx` on 2024-10-21 04:38:05
 export PATH="$PATH:/Users/e137126/.local/bin"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-export PATH=$(pyenv root)/shims:$PATH
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"

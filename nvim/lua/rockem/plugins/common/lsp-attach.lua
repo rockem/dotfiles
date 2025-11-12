@@ -1,9 +1,12 @@
 local M = {}
 
 M.on_attach = function(ev)
-  if ev.name == 'ruff' then
+  -- Get the LSP client object (required for Neovim 0.11+)
+  local client = vim.lsp.get_client_by_id(ev.data.client_id)
+
+  if client.name == 'ruff' then
     -- Disable hover in favor of Pyright
-    ev.server_capabilities.hoverProvider = false
+    client.server_capabilities.hoverProvider = false
   end
   -- Buffer local mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
