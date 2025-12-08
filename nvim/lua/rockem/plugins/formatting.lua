@@ -14,6 +14,7 @@ return {
 				astro = { "prettier" },
 				typescript = { "prettier" },
 				svelte = { "prettier" },
+				ocaml = { "ocamlformat" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

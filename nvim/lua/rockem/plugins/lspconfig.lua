@@ -13,6 +13,7 @@ return {
 		vim.lsp.enable("lua_ts")
 		vim.lsp.enable("ts_ls")
 		vim.lsp.enable("astro")
+		vim.lsp.enable("ocamllsp")
 
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),

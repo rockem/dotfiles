@@ -2,22 +2,25 @@ local opt = vim.opt -- for conciseness
 
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
-opt.number = true -- shows absolute line number on cursor line (when relative number is on)
+opt.number = true         -- shows absolute line number on cursor line (when relative number is on)
+vim.opt.showbreak = '↪ '
 
 -- tabs & indentation
-opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
+opt.tabstop = 2       -- 2 spaces for tabs (prettier default)
 opt.softtabstop = 2
-opt.shiftwidth = 2 -- 2 spaces for indent width
-opt.expandtab = true -- expand tab to spaces
+opt.shiftwidth = 2    -- 2 spaces for indent width
+opt.expandtab = true  -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.smartindent = true
 
 -- line wrapping
-opt.wrap = false -- disable line wrapping
+opt.wrap = true -- disable line wrapping
+opt.linebreak = true
+opt.textwidth = 100
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
-opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
+opt.smartcase = true  -- if you include mixed case in your search, assumes you want case-sensitive
 
 -- cursor line
 opt.cursorline = true -- highlight the current cursor line
@@ -45,7 +48,7 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 -- Files
 opt.swapfile = false -- turn off swapfile
 opt.backup = false
-opt.autoread = true -- Turn auto read for changed files
+opt.autoread = true  -- Turn auto read for changed files
 opt.history = 50
 opt.autowriteall = true
 

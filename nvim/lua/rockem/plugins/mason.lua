@@ -19,6 +19,7 @@ return {
 				"ruff",
 				"astro",
 				"ts_ls",
+				"ocamllsp",
 			},
 
 			automatic_installation = true,
@@ -30,6 +31,7 @@ return {
 				"debugpy",
 				"flake8",
 				"dart-debug-adapter",
+				"ocamlformat",
 			},
 		})
 	end,
