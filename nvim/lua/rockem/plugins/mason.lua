@@ -20,6 +20,7 @@ return {
 				"astro",
 				"ts_ls",
 				"ocamllsp",
+				"rust_analyzer",
 			},
 
 			automatic_installation = true,
