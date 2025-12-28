@@ -5,6 +5,11 @@ return {
 		local conform = require("conform")
 
 		conform.setup({
+			formatters = {
+				black = {
+					prepend_args = { "--fast" },
+				},
+			},
 			formatters_by_ft = {
 				yaml = { "prettier" },
 				lua = { "stylua" },
@@ -15,11 +20,12 @@ return {
 				typescript = { "prettier" },
 				svelte = { "prettier" },
 				ocaml = { "ocamlformat" },
+				rust = { "rustfmt" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
 				async = false,
-				timeout_ms = 1000,
+				timeout_ms = 5000,
 			},
 		})
 

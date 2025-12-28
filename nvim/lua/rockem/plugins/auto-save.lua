@@ -1,8 +1,12 @@
 return {
-	"okuuva/auto-save.nvim",
-	enabled = false,
-	version = "*",
+	"rmagatti/auto-session",
+	lazy = false,
+
+	---enables autocomplete for opts
+	---@module "auto-session"
+	---@type AutoSession.Config
 	opts = {
-		debounce_delay = 30000,
+		suppressed_dirs = { "~/", "~/Downloads", "/" },
+		-- log_level = 'debug',
 	},
 }
