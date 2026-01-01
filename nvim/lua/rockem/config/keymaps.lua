@@ -23,11 +23,28 @@ map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Find files in 
 map("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Find recent files" })
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Find string in cwd" })
 map(
-	"n",
-	"<leader>fc",
-	"<cmd>Telescope find_files search_dirs=~/.config/nvim<CR>",
-	{ desc = "Find config files" }
+  "n",
+  "<leader>fc",
+  "<cmd>Telescope find_files search_dirs=~/.config/nvim<CR>",
+  { desc = "Find config files" }
 )
 map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Find buffers" })
 
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "File explorer" })
+
+-- Testing (Neotest)
+map("n", "<leader>tt", function()
+  require("neotest").run.run()
+end, { desc = "Run nearest test" })
+map("n", "<leader>tf", function()
+  require("neotest").run.run(vim.fn.expand("%"))
+end, { desc = "Run file tests" })
+map("n", "<leader>ts", function()
+  require("neotest").summary.toggle()
+end, { desc = "Toggle test summary" })
+map("n", "<leader>to", function()
+  require("neotest").output_panel.toggle()
+end, { desc = "Toggle test output" })
+map("n", "<leader>ta", function()
+  require("neotest").run.run(vim.fn.getcwd())
+end, { desc = "Run all tests" })
