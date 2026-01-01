@@ -14,6 +14,7 @@ return {
 		},
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
+		"zbirenbaum/copilot-cmp", -- copilot completions
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -21,6 +22,9 @@ return {
 
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
+
+		-- setup copilot-cmp
+		require("copilot_cmp").setup()
 
 		cmp.setup({
 			completion = {
@@ -43,8 +47,8 @@ return {
 			}),
 
 			sources = cmp.config.sources({
+				{ name = "copilot" }, -- Copilot
 				{ name = "nvim_lsp" }, -- LSP
-				{ name = "codeium" }, -- Codeium
 				{ name = "luasnip" }, -- snippets
 				{ name = "buffer" }, -- text within current buffer
 				{ name = "path" }, -- file system paths
