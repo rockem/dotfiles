@@ -1,12 +1,4 @@
 return {
-	"rmagatti/auto-session",
+	"Pocco81/auto-save.nvim",
 	lazy = false,
-
-	---enables autocomplete for opts
-	---@module "auto-session"
-	---@type AutoSession.Config
-	opts = {
-		suppressed_dirs = { "~/", "~/Downloads", "/" },
-		-- log_level = 'debug',
-	},
 }
