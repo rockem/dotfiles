@@ -14,6 +14,7 @@ return {
     vim.lsp.enable("ts_ls")
     vim.lsp.enable("astro")
     vim.lsp.enable("rust_analyzer")
+    vim.lsp.enable("basedpyright")
 
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -43,6 +44,20 @@ return {
         ["rust-analyzer"] = {
           cargo = {
             allFeatures = true,
+          },
+        },
+      },
+    })
+
+    -- Configure basedpyright
+    vim.lsp.config("basedpyright", {
+      settings = {
+        basedpyright = {
+          analysis = {
+            typeCheckingMode = "basic",
+            autoSearchPaths = true,
+            useLibraryCodeForTypes = true,
+            diagnosticMode = "openFilesOnly",
           },
         },
       },

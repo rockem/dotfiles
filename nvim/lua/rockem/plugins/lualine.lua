@@ -16,6 +16,44 @@ return {
 					{ "filename", path = 4 },
 				},
 				lualine_x = {
+					{
+						function()
+							local neotest = require("neotest")
+							local status = neotest.state.status_counts(neotest.state.adapter_ids()[1] or "neotest")
+							if not status then
+								return ""
+							end
+
+							local passed = status.passed or 0
+							local failed = status.failed or 0
+							local skipped = status.skipped or 0
+							local running = status.running or 0
+
+							if running > 0 then
+								return string.format("🧪 Running: %d", running)
+							elseif failed > 0 then
+								return string.format("✗ %d ✓ %d", failed, passed)
+							elseif passed > 0 then
+								return string.format("✓ %d", passed)
+							end
+							return ""
+						end,
+						color = function()
+							local neotest = require("neotest")
+							local status = neotest.state.status_counts(neotest.state.adapter_ids()[1] or "neotest")
+							if not status then
+								return nil
+							end
+
+							if (status.running or 0) > 0 then
+								return { fg = "#89b4fa" } -- blue for running
+							elseif (status.failed or 0) > 0 then
+								return { fg = "#f38ba8" } -- red for failures
+							elseif (status.passed or 0) > 0 then
+								return { fg = "#a6e3a1" } -- green for passing
+							end
+						end,
+					},
 					-- {
 					-- 	lazy_status.updates,
 					-- 	cond = lazy_status.has_updates,

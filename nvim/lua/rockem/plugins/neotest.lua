@@ -26,15 +26,23 @@ return {
         open_on_run = true,
       },
       consumers = {
+        consumers = {
+          overseer = require("neotest.consumers.overseer"),
+        },
         live_output = function(client)
           client.listeners.run = function(_, _)
-            -- Open the live output pane when a test is running
-            require("neotest").output_panel.open({
-              enter = false,
-              follow = true, -- Keep it updated with real-time output
-            })
+            -- Clear and close previous output before opening new one
+            require("neotest").output_panel.clear()
+            -- require("neotest").output.open({ enter = false, auto_close = false })
           end
         end,
+      },
+      output = {
+        enabled = true,
+        open_on_run = "short",
+      },
+      quickfix = {
+        enabled = false,
       },
     })
   end,
