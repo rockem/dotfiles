@@ -26,9 +26,6 @@ return {
         open_on_run = true,
       },
       consumers = {
-        consumers = {
-          overseer = require("neotest.consumers.overseer"),
-        },
         live_output = function(client)
           client.listeners.run = function(_, _)
             -- Clear and close previous output before opening new one
