@@ -13,6 +13,7 @@ return {
 		spec = {
 			{ "<leader>g", group = "Git" },
 			{ "<leader>f", group = "Fuzzy find" },
+			{ "<leader>s", group = "Swap (Treesitter)" },
 		},
 		icons = {
 			mappings = false,

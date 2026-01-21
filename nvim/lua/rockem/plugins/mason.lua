@@ -27,7 +27,6 @@ return {
 
     tool_installer.setup({
       ensure_installed = {
-        "black",
         "debugpy",
         "flake8",
         "dart-debug-adapter",
