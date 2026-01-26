@@ -174,33 +174,6 @@ Defined in `lua/rockem/config/keymaps.lua`:
         └── [other plugin configs]
 ```
 
-## Common Tasks
-
-### Restart Neovim Config
-
-After editing config files:
-
-1. Source the file: `:source %` (if in the file)
-2. Or restart Neovim: `:qa` then reopen
-
-### Check LSP Status
-
-- `:LspInfo` - View attached LSP clients
-- `:Mason` - View installed tools
-- `<leader>rs` - Restart LSP for current buffer
-
-### Format Code
-
-- Auto-formats on save (if formatter configured)
-- Manual: `<leader>cf`
-
-### Search Codebase
-
-- Find files: `<leader>ff`
-- Live grep: `<leader>fg`
-- Recent files: `<leader>fr`
-- Config files: `<leader>fc`
-
 ## Important Notes
 
 - **Personal namespace**: All Lua modules under `rockem.*` (not a standard name)
