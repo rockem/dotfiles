@@ -1,0 +1,1 @@
+2026-01-26 09:04:00: Starting server using secret key: /Users/e137126/.config/joplin-desktop/ipc_secret_key.txt

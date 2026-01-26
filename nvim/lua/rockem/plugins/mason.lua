@@ -30,6 +30,7 @@ return {
         "debugpy",
         "flake8",
         "dart-debug-adapter",
+        "markdownlint",
       },
     })
   end,

@@ -14,6 +14,7 @@ return {
 			{ "<leader>g", group = "Git" },
 			{ "<leader>f", group = "Fuzzy find" },
 			{ "<leader>s", group = "Swap (Treesitter)" },
+			{ "<leader>t", group = "Test" },
 		},
 		icons = {
 			mappings = false,

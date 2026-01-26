@@ -1,0 +1,512 @@
+2026-01-26 09:04:01: App: Profile directory: /Users/e137126/.config/joplin-desktop
+2026-01-26 09:04:01: App: Root profile directory: /Users/e137126/.config/joplin-desktop
+2026-01-26 09:04:01: Database was open successfully
+2026-01-26 09:04:01: Checking for database schema update...
+2026-01-26 09:04:01: Current database version <null>
+2026-01-26 09:04:01: Upgrading database from version 0
+2026-01-26 09:04:01: Converting database to version 1
+2026-01-26 09:04:01: Converting database to version 2
+2026-01-26 09:04:01: Converting database to version 3
+2026-01-26 09:04:01: Converting database to version 4
+2026-01-26 09:04:01: Converting database to version 5
+2026-01-26 09:04:01: Converting database to version 6
+2026-01-26 09:04:01: Converting database to version 7
+2026-01-26 09:04:01: Converting database to version 8
+2026-01-26 09:04:01: Converting database to version 9
+2026-01-26 09:04:01: Converting database to version 10
+2026-01-26 09:04:01: Converting database to version 11
+2026-01-26 09:04:01: Converting database to version 12
+2026-01-26 09:04:01: Converting database to version 13
+2026-01-26 09:04:01: Converting database to version 14
+2026-01-26 09:04:01: Converting database to version 15
+2026-01-26 09:04:01: Converting database to version 16
+2026-01-26 09:04:01: Converting database to version 17
+2026-01-26 09:04:01: Converting database to version 18
+2026-01-26 09:04:01: Converting database to version 19
+2026-01-26 09:04:01: Converting database to version 20
+2026-01-26 09:04:01: Converting database to version 21
+2026-01-26 09:04:01: Converting database to version 22
+2026-01-26 09:04:01: Converting database to version 23
+2026-01-26 09:04:01: Converting database to version 24
+2026-01-26 09:04:01: Converting database to version 25
+2026-01-26 09:04:01: Converting database to version 26
+2026-01-26 09:04:01: Converting database to version 27
+2026-01-26 09:04:01: Converting database to version 28
+2026-01-26 09:04:01: Converting database to version 29
+2026-01-26 09:04:01: Converting database to version 30
+2026-01-26 09:04:01: Converting database to version 31
+2026-01-26 09:04:01: Converting database to version 32
+2026-01-26 09:04:01: Converting database to version 33
+2026-01-26 09:04:01: Converting database to version 34
+2026-01-26 09:04:01: Migration failed with fallback and will not be repeated - saving version number
+2026-01-26 09:04:01: Converting database to version 35
+2026-01-26 09:04:01: Converting database to version 36
+2026-01-26 09:04:01: Converting database to version 37
+2026-01-26 09:04:01: Converting database to version 38
+2026-01-26 09:04:01: Converting database to version 39
+2026-01-26 09:04:01: Converting database to version 40
+2026-01-26 09:04:01: Converting database to version 41
+2026-01-26 09:04:01: Converting database to version 42
+2026-01-26 09:04:01: Converting database to version 43
+2026-01-26 09:04:01: Converting database to version 44
+2026-01-26 09:04:01: Converting database to version 45
+2026-01-26 09:04:01: Converting database to version 46
+2026-01-26 09:04:01: Converting database to version 47
+2026-01-26 09:04:01: Converting database to version 48
+2026-01-26 09:04:01: Converting database to version 49
+2026-01-26 09:04:01: New version: 49. Previously recorded version: 0
+2026-01-26 09:04:01: Initializing tables...
+2026-01-26 09:04:01: KeychainService: checking if keychain supported
+2026-01-26 09:04:01: KeychainService: tried to set and get password. Result was: mytest
+2026-01-26 09:04:01: e2ee/utils: Master password is not set - trying to get it from the active master key...
+2026-01-26 09:04:01: handleSyncStartupOperation: Processing operation: 0
+2026-01-26 09:04:01: App: Client ID: b25755af489d426aba81787889a7d47a
+2026-01-26 09:04:01: First start: detected locale as en_GB
+2026-01-26 09:04:01: models/Setting: Skipping all default migrations...
+2026-01-26 09:04:01: e2ee/utils: Trying to load 0 master keys...
+2026-01-26 09:04:01: e2ee/utils: Loaded master keys: 0
+2026-01-26 09:04:01: ResourceFetcher: Auto-add resources: Mode: always
+2026-01-26 09:04:01: permanentlyDeleteOldData: Processing items older than 7776000000ms...
+2026-01-26 09:04:01: ResourceFetcher: Auto-added resources: 0
+2026-01-26 09:04:01: permanentlyDeleteOldData: Items to permanently delete: {"folderIds":[],"noteIds":[]}
+2026-01-26 09:04:01: checkDisabledSyncItemsNotification: No errors: Hiding notification
+2026-01-26 09:04:01: Running migration: 20
+2026-01-26 09:04:01: DeleteAction: MigrationService: ; Item IDs: 1
+2026-01-26 09:04:01: Running migration: 27
+2026-01-26 09:04:01: DeleteAction: MigrationService: ; Item IDs: 2
+2026-01-26 09:04:01: Running migration: 33
+2026-01-26 09:04:01: SearchEngine: Updating FTS table...
+2026-01-26 09:04:01: Updating items_normalized from {"updated_time":0,"id":""}
+2026-01-26 09:04:01: SearchEngine: Updated FTS table in 0ms. Inserted: 0. Deleted: 0
+2026-01-26 09:04:01: Performance: SearchEngine/syncTables: End at 1.46s (took 106.1ms)
+2026-01-26 09:04:01: DeleteAction: MigrationService: ; Item IDs: 3
+2026-01-26 09:04:01: Running migration: 35
+2026-01-26 09:04:01: SearchEngine: Updating FTS table...
+2026-01-26 09:04:01: Updating items_normalized from {"updated_time":0,"id":""}
+2026-01-26 09:04:01: SearchEngine: Updated FTS table in 0ms. Inserted: 0. Deleted: 0
+2026-01-26 09:04:01: Performance: SearchEngine/syncTables: End at 1.57s (took 107.3ms)
+2026-01-26 09:04:01: DeleteAction: MigrationService: ; Item IDs: 4
+2026-01-26 09:04:01: Running migration: 42
+2026-01-26 09:04:01: DeleteAction: MigrationService: ; Item IDs: 5
+2026-01-26 09:04:01: Performance: BaseApplication/start: End at 1.57s (took [ 0.74s ])
+2026-01-26 09:04:01: App: "syncInfoCache" was changed - setting up encryption related code
+2026-01-26 09:04:01: e2ee/utils: Trying to load 0 master keys...
+2026-01-26 09:04:01: e2ee/utils: Loaded master keys: 0
+2026-01-26 09:04:01: App: "syncInfoCache" was changed - setting up encryption related code
+2026-01-26 09:04:01: e2ee/utils: Trying to load 0 master keys...
+2026-01-26 09:04:01: e2ee/utils: Loaded master keys: 0
+2026-01-26 09:04:01: App: "syncInfoCache" was changed - setting up encryption related code
+2026-01-26 09:04:01: e2ee/utils: Trying to load 0 master keys...
+2026-01-26 09:04:01: e2ee/utils: Loaded master keys: 0
+2026-01-26 09:04:01: app.start: doing regular boot
+2026-01-26 09:04:01: App: Setting up auto-updater service...
+2026-01-26 09:04:01: OcrService: Starting background service...
+2026-01-26 09:04:01: App: "syncInfoCache" was changed - setting up encryption related code
+2026-01-26 09:04:01: e2ee/utils: Trying to load 0 master keys...
+2026-01-26 09:04:01: e2ee/utils: Loaded master keys: 0
+2026-01-26 09:04:01: App: "syncInfoCache" was changed - setting up encryption related code
+2026-01-26 09:04:01: e2ee/utils: Trying to load 0 master keys...
+2026-01-26 09:04:01: e2ee/utils: Loaded master keys: 0
+2026-01-26 09:04:01: App: "syncInfoCache" was changed - setting up encryption related code
+2026-01-26 09:04:01: e2ee/utils: Trying to load 0 master keys...
+2026-01-26 09:04:01: e2ee/utils: Loaded master keys: 0
+2026-01-26 09:04:01: OcrService: Found 0 resources to process...
+2026-01-26 09:04:01: RevisionService: runInBackground: Starting background service with revision collection interval 600000
+2026-01-26 09:04:01: PluginService: Loading plugin from /Users/e137126/.config/joplin-desktop/cache/io.github.jackgruber.backup
+2026-01-26 09:04:01: PluginService: Loading plugin from /Users/e137126/.config/joplin-desktop/cache/io.github.personalizedrefrigerator.js-draw
+2026-01-26 09:04:02: Performance: app/initPluginService: End at 1.82s (took 195.2ms)
+2026-01-26 09:04:02: OcrService: 0 resources have been processed.
+2026-01-26 09:04:02: SpellCheckerServiceDriverNative: Set effective languages to "en-GB"
+2026-01-26 09:04:02: SpellCheckerServiceDriverNative: Set effective languages to "en-GB"
+2026-01-26 09:04:02: Performance: app/start: End at 1.83s (took [ 0.99s ])
+2026-01-26 09:04:02: Performance: main: End at 1.91s (took [[ 1.19s ]])
+2026-01-26 09:04:02: joplin.plugins: Starting plugin: io.github.jackgruber.backup
+2026-01-26 09:04:02: joplin.plugins: Starting plugin: io.github.personalizedrefrigerator.js-draw
+2026-01-26 09:04:02: OcrService: Found 1 resources to process...
+2026-01-26 09:04:02: joplin.plugins: Finished running onStart handler: io.github.personalizedrefrigerator.js-draw (Took 55ms)
+2026-01-26 09:04:02: useFormNote: Sync has finished and note has never been changed - reloading it
+2026-01-26 09:04:02: useFormNote: [warn] Trying to reload note that has been deleted: <null>
+2026-01-26 09:04:02: OcrService: Processing resource 1 / 1: 440adbebf526427eba90d689d5cc8737 (type image/png)...
+2026-01-26 09:04:02: useFormNote: Sync has finished and note has never been changed - reloading it
+2026-01-26 09:04:02: joplin.plugins: Finished running onStart handler: io.github.jackgruber.backup (Took 235ms)
+2026-01-26 09:04:02: OcrService: Processing resource 2 / 1: cb1eb09ca7144528a3fb58d968d1a43f (type image/png)...
+2026-01-26 09:04:02: OcrService: Processing resource 3 / 1: 19467624ee0544879de5d00ee8f22e9a (type image/png)...
+2026-01-26 09:04:02: EditorPluginHandler: emitActivationCheck: responses: {"activatedEditors":[],"effectiveNoteId":"125fc251b00d45f9be93e34c0ecd03ef","windowId":"default"}
+2026-01-26 09:04:02: DecryptionWorker: cannot start because no master key is currently loaded.
+2026-01-26 09:04:02: OcrDriverTesseract: Created worker: 1
+2026-01-26 09:04:02: OcrDriverTesseract: Created worker: 2
+2026-01-26 09:04:02: OcrDriverTesseract: Created worker: 3
+2026-01-26 09:04:03: ResourceService::indexNoteResources: Start
+2026-01-26 09:04:03: OcrService: 3 resources have been processed.
+2026-01-26 09:04:03: Performance: ResourceService/indexNoteResources: End at 3.43s (took 128.9ms)
+2026-01-26 09:04:03: ResourceService::indexNoteResources: Completed
+2026-01-26 09:04:05: RevisionService: maintenance: Starting...
+2026-01-26 09:04:05: RevisionService: maintenance: Service is enabled
+2026-01-26 09:04:05: RevisionService: collectRevisions: Created revisions for 0 notes
+2026-01-26 09:04:05: RevisionService: maintenance: Done in 123ms
+2026-01-26 09:04:06: checkForUpdates: Starting...
+2026-01-26 09:04:06: checkForUpdates: Checking with options {"includePreReleases":false}
+2026-01-26 09:04:07: checkForUpdates: [error] FetchError: request to https://objects.joplinusercontent.com/r/releases failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://objects.joplinusercontent.com/r/releases failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:07: checkForUpdates: Done.
+2026-01-26 09:04:07: RepositoryApi: findWorkingMirror: Could not connect to https://raw.githubusercontent.com/joplin/plugins/master: FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:08: RepositoryApi: findWorkingMirror: Could not connect to https://cdn.staticaly.com/gh/joplin/plugins/master: FetchError: request to https://cdn.staticaly.com/gh/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://cdn.staticaly.com/gh/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:09: RepositoryApi: findWorkingMirror: Could not connect to https://ghproxy.com/https://raw.githubusercontent.com/joplin/plugins/master: FetchError: request to https://ghproxy.com/https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://ghproxy.com/https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:09: RepositoryApi: findWorkingMirror: Could not connect to https://cdn.jsdelivr.net/gh/joplin/plugins@master: FetchError: request to https://cdn.jsdelivr.net/gh/joplin/plugins@master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://cdn.jsdelivr.net/gh/joplin/plugins@master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:09: RepositoryApi: findWorkingMirror: Could not connect to https://raw.fastgit.org/joplin/plugins/master: FetchError: request to https://raw.fastgit.org/joplin/plugins/master/.gitignore failed, reason: getaddrinfo ENOTFOUND raw.fastgit.org
+Code: ENOTFOUND
+FetchError: request to https://raw.fastgit.org/joplin/plugins/master/.gitignore failed, reason: getaddrinfo ENOTFOUND raw.fastgit.org
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:09: RepositoryApi: findWorkingMirror: Could not find any working GitHub URL
+2026-01-26 09:04:10: PluginState: [error] FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/manifests.json failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/manifests.json failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:10: RepositoryApi: findWorkingMirror: Could not connect to https://raw.githubusercontent.com/joplin/plugins/master: FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:10: RepositoryApi: findWorkingMirror: Could not connect to https://cdn.staticaly.com/gh/joplin/plugins/master: FetchError: request to https://cdn.staticaly.com/gh/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://cdn.staticaly.com/gh/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:10: RepositoryApi: findWorkingMirror: Could not connect to https://ghproxy.com/https://raw.githubusercontent.com/joplin/plugins/master: FetchError: request to https://ghproxy.com/https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://ghproxy.com/https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:10: RepositoryApi: findWorkingMirror: Could not connect to https://cdn.jsdelivr.net/gh/joplin/plugins@master: FetchError: request to https://cdn.jsdelivr.net/gh/joplin/plugins@master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://cdn.jsdelivr.net/gh/joplin/plugins@master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:10: RepositoryApi: findWorkingMirror: Could not connect to https://raw.fastgit.org/joplin/plugins/master: FetchError: request to https://raw.fastgit.org/joplin/plugins/master/.gitignore failed, reason: getaddrinfo ENOTFOUND raw.fastgit.org
+Code: ENOTFOUND
+FetchError: request to https://raw.fastgit.org/joplin/plugins/master/.gitignore failed, reason: getaddrinfo ENOTFOUND raw.fastgit.org
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:10: RepositoryApi: findWorkingMirror: Could not find any working GitHub URL
+2026-01-26 09:04:11: PluginState: [error] FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/manifests.json failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/manifests.json failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:11: SearchEngine: Updating FTS table...
+2026-01-26 09:04:11: Updating items_normalized from {"updated_time":0,"id":""}
+2026-01-26 09:04:11: SearchEngine: Updated FTS table in 36ms. Inserted: 8. Deleted: 0
+2026-01-26 09:04:11: Performance: SearchEngine/syncTables: End at 11.5s (took 142.4ms)
+2026-01-26 09:04:11: RepositoryApi: findWorkingMirror: Could not connect to https://raw.githubusercontent.com/joplin/plugins/master: FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:11: RepositoryApi: findWorkingMirror: Could not connect to https://cdn.staticaly.com/gh/joplin/plugins/master: FetchError: request to https://cdn.staticaly.com/gh/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://cdn.staticaly.com/gh/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:12: RepositoryApi: findWorkingMirror: Could not connect to https://ghproxy.com/https://raw.githubusercontent.com/joplin/plugins/master: FetchError: request to https://ghproxy.com/https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://ghproxy.com/https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:12: RepositoryApi: findWorkingMirror: Could not connect to https://cdn.jsdelivr.net/gh/joplin/plugins@master: FetchError: request to https://cdn.jsdelivr.net/gh/joplin/plugins@master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://cdn.jsdelivr.net/gh/joplin/plugins@master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:12: RepositoryApi: findWorkingMirror: Could not connect to https://raw.fastgit.org/joplin/plugins/master: FetchError: request to https://raw.fastgit.org/joplin/plugins/master/.gitignore failed, reason: getaddrinfo ENOTFOUND raw.fastgit.org
+Code: ENOTFOUND
+FetchError: request to https://raw.fastgit.org/joplin/plugins/master/.gitignore failed, reason: getaddrinfo ENOTFOUND raw.fastgit.org
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:12: RepositoryApi: findWorkingMirror: Could not find any working GitHub URL
+2026-01-26 09:04:12: PluginState: [error] FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/manifests.json failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/manifests.json failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:17: Preparing scheduled sync
+2026-01-26 09:04:17: Sync cancelled - no sync target is selected.
+2026-01-26 09:04:23: RepositoryApi: findWorkingMirror: Could not connect to https://raw.githubusercontent.com/joplin/plugins/master: FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:23: RepositoryApi: findWorkingMirror: Could not connect to https://cdn.staticaly.com/gh/joplin/plugins/master: FetchError: request to https://cdn.staticaly.com/gh/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://cdn.staticaly.com/gh/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:23: RepositoryApi: findWorkingMirror: Could not connect to https://ghproxy.com/https://raw.githubusercontent.com/joplin/plugins/master: FetchError: request to https://ghproxy.com/https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://ghproxy.com/https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:23: RepositoryApi: findWorkingMirror: Could not connect to https://cdn.jsdelivr.net/gh/joplin/plugins@master: FetchError: request to https://cdn.jsdelivr.net/gh/joplin/plugins@master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://cdn.jsdelivr.net/gh/joplin/plugins@master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:24: RepositoryApi: findWorkingMirror: Could not connect to https://raw.fastgit.org/joplin/plugins/master: FetchError: request to https://raw.fastgit.org/joplin/plugins/master/.gitignore failed, reason: getaddrinfo ENOTFOUND raw.fastgit.org
+Code: ENOTFOUND
+FetchError: request to https://raw.fastgit.org/joplin/plugins/master/.gitignore failed, reason: getaddrinfo ENOTFOUND raw.fastgit.org
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:24: RepositoryApi: findWorkingMirror: Could not find any working GitHub URL
+2026-01-26 09:04:24: PluginState: [error] FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/manifests.json failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/manifests.json failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:30: RepositoryApi: findWorkingMirror: Could not connect to https://raw.githubusercontent.com/joplin/plugins/master: FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:30: RepositoryApi: findWorkingMirror: Could not connect to https://cdn.staticaly.com/gh/joplin/plugins/master: FetchError: request to https://cdn.staticaly.com/gh/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://cdn.staticaly.com/gh/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:31: RepositoryApi: findWorkingMirror: Could not connect to https://ghproxy.com/https://raw.githubusercontent.com/joplin/plugins/master: FetchError: request to https://ghproxy.com/https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://ghproxy.com/https://raw.githubusercontent.com/joplin/plugins/master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:31: RepositoryApi: findWorkingMirror: Could not connect to https://cdn.jsdelivr.net/gh/joplin/plugins@master: FetchError: request to https://cdn.jsdelivr.net/gh/joplin/plugins@master/.gitignore failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://cdn.jsdelivr.net/gh/joplin/plugins@master/.gitignore failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:31: RepositoryApi: findWorkingMirror: Could not connect to https://raw.fastgit.org/joplin/plugins/master: FetchError: request to https://raw.fastgit.org/joplin/plugins/master/.gitignore failed, reason: getaddrinfo ENOTFOUND raw.fastgit.org
+Code: ENOTFOUND
+FetchError: request to https://raw.fastgit.org/joplin/plugins/master/.gitignore failed, reason: getaddrinfo ENOTFOUND raw.fastgit.org
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:31: RepositoryApi: findWorkingMirror: Could not find any working GitHub URL
+2026-01-26 09:04:31: PluginState: [error] FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/manifests.json failed, reason: self signed certificate in certificate chain
+Code: SELF_SIGNED_CERT_IN_CHAIN
+FetchError: request to https://raw.githubusercontent.com/joplin/plugins/master/manifests.json failed, reason: self signed certificate in certificate chain
+    at ClientRequest.<anonymous> (/Applications/Joplin.app/Contents/Resources/app.asar/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:519:28)
+    at emitErrorEvent (node:_http_client:107:11)
+    at TLSSocket.socketErrorListener (node:_http_client:574:5)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-26 09:04:31: ResourceService::indexNoteResources: Start
+2026-01-26 09:04:31: Performance: ResourceService/indexNoteResources: End at 31.73s (took 106.6ms)
+2026-01-26 09:04:31: ResourceService::indexNoteResources: Completed
+2026-01-26 09:04:31: ResourceService::deleteOrphanResources: []
+2026-01-26 09:04:41: SearchEngine: Updating FTS table...
+2026-01-26 09:04:42: Updating items_normalized from {"updated_time":1769411043325,"id":"19467624ee0544879de5d00ee8f22e9a"}
+2026-01-26 09:04:42: SearchEngine: Updated FTS table in 2ms. Inserted: 0. Deleted: 0
+2026-01-26 09:04:42: Performance: SearchEngine/syncTables: End at 41.84s (took 108.5ms)
+2026-01-26 09:05:22: EditorPluginHandler: emitActivationCheck: responses: {"activatedEditors":[],"effectiveNoteId":"125fc251b00d45f9be93e34c0ecd03ef","windowId":"default"}
+2026-01-26 09:05:22: useFormNote: Sync has finished and note has never been changed - reloading it
+2026-01-26 09:05:31: EditorPluginHandler: emitActivationCheck: responses: {"activatedEditors":[],"effectiveNoteId":"db90a8afbf3243528dcd1aafbda61cee","windowId":"default"}
