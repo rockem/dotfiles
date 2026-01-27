@@ -19,7 +19,9 @@ return {
 					{
 						function()
 							local neotest = require("neotest")
-							local status = neotest.state.status_counts(neotest.state.adapter_ids()[1] or "neotest")
+							local status = neotest.state.status_counts(
+								neotest.state.adapter_ids()[1] or "neotest"
+							)
 							if not status then
 								return ""
 							end
@@ -40,7 +42,9 @@ return {
 						end,
 						color = function()
 							local neotest = require("neotest")
-							local status = neotest.state.status_counts(neotest.state.adapter_ids()[1] or "neotest")
+							local status = neotest.state.status_counts(
+								neotest.state.adapter_ids()[1] or "neotest"
+							)
 							if not status then
 								return nil
 							end
@@ -63,19 +67,19 @@ return {
 					-- { "fileformat" },
 					{ "filetype" },
 				},
-				lualine_y = {
-					{
-						function()
-							local target_time = os.time({ year = 2023, month = 10, day = 7 })
-							local current_time = os.time()
-							local difference_in_seconds = current_time - target_time
-							local days_passed = math.floor(difference_in_seconds / (60 * 60 * 24))
-								+ 1
-							return string.format("\u{1F397}%s", days_passed)
-						end,
-						color = { fg = "#f9e2af" },
-					},
-				},
+				-- lualine_y = {
+				-- 	{
+				-- 		function()
+				-- 			local target_time = os.time({ year = 2023, month = 10, day = 7 })
+				-- 			local current_time = os.time()
+				-- 			local difference_in_seconds = current_time - target_time
+				-- 			local days_passed = math.floor(difference_in_seconds / (60 * 60 * 24))
+				-- 				+ 1
+				-- 			return string.format("\u{1F397}%s", days_passed)
+				-- 		end,
+				-- 		color = { fg = "#f9e2af" },
+				-- 	},
+				-- },
 			},
 		})
 	end,
