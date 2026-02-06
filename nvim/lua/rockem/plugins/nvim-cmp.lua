@@ -6,6 +6,7 @@ return {
     "hrsh7th/cmp-buffer",     -- source for text in buffer
     "hrsh7th/cmp-path",       -- source for file system paths
     "zbirenbaum/copilot-cmp", -- copilot suggestions in cmp
+    "uga-rosa/cmp-dictionary", -- dictionary suggestions in cmp
     {
       "L3MON4D3/LuaSnip",
       -- follow latest release.
@@ -22,6 +23,12 @@ return {
 
     -- Setup copilot-cmp
     require("copilot_cmp").setup()
+
+    -- Setup cmp-dictionary
+    require("cmp_dictionary").setup({
+      paths = { "/usr/share/dict/words" },
+      exact_length = 2,
+    })
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
@@ -51,6 +58,7 @@ return {
         { name = "nvim_lsp" }, -- LSP
         { name = "luasnip" },  -- snippets
         { name = "buffer" },   -- text within current buffer
+        { name = "dictionary" },
         { name = "path" },     -- file system paths
       }),
     })
