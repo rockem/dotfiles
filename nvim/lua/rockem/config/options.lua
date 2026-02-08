@@ -14,9 +14,8 @@ opt.autoindent = true -- copy indent from current line when starting new one
 opt.smartindent = true
 
 -- line wrapping
-opt.wrap = true -- disable line wrapping
-opt.linebreak = true
-opt.textwidth = 100
+opt.wrap = false -- disable line wrapping
+opt.textwidth = 120
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
@@ -33,7 +32,7 @@ opt.termguicolors = true
 opt.signcolumn = "yes" -- Show sign column so that text doesn't shift
 opt.scrolloff = 8
 opt.isfname:append("@-@")
-opt.colorcolumn = "100"
+opt.colorcolumn = "120"
 opt.shortmess:append("I")
 
 opt.splitright = true -- split vertical window to the right

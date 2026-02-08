@@ -54,3 +54,6 @@ end, { desc = "Show test output" })
 map("n", "<leader>tl", function()
   require("neotest").run.run_last()
 end, { desc = "Run last test" })
+
+-- Pre commit
+vim.keymap.set("n", "<leader>cp", "<cmd>Precommit<CR>", { desc = "Run all pre-commit hooks" })
