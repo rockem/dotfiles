@@ -8,7 +8,6 @@ vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Show Lazy" })
 
 -- Editor
 map("n", "<leader>R", ':<C-u>registers<CR>:normal! "p<Left>', { desc = "Select from register" })
-map("n", "<leader>U", ":Telescope undo<CR>", { desc = "Toggle undo tree ui" })
 
 -- Buffer
 map("n", "<C-Tab>", ":b#<CR>")
@@ -18,42 +17,33 @@ map("i", "<C-Tab>", "<esc>:b#<CR>")
 map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview git changes" })
 map("n", "<leader>gb", "<cmd>Git blame<CR>", { desc = "Git blame" })
 
--- Fuzzy find
-map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Find files in cwd" })
-map("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Find recent files" })
-map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Find string in cwd" })
-map(
-  "n",
-  "<leader>fc",
-  "<cmd>Telescope find_files search_dirs=~/.config/nvim<CR>",
-  { desc = "Find config files" }
-)
-map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Find buffers" })
-
-map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "File explorer" })
-
--- Testing (Neotest)
-map("n", "<leader>tt", function()
-  require("neotest").run.run()
-end, { desc = "Run nearest test" })
-map("n", "<leader>tf", function()
-  require("neotest").run.run(vim.fn.expand("%"))
-end, { desc = "Run file tests" })
-map("n", "<leader>ts", function()
-  require("neotest").summary.toggle()
-end, { desc = "Toggle test summary" })
-map("n", "<leader>to", function()
-  require("neotest").output_panel.toggle()
-end, { desc = "Toggle test output" })
-map("n", "<leader>ta", function()
-  require("neotest").run.run(vim.fn.getcwd())
-end, { desc = "Run all tests" })
-map("n", "<leader>tO", function()
-  require("neotest").output.open({ enter = true })
-end, { desc = "Show test output" })
-map("n", "<leader>tl", function()
-  require("neotest").run.run_last()
-end, { desc = "Run last test" })
-
 -- Pre commit
 vim.keymap.set("n", "<leader>cp", "<cmd>Precommit<CR>", { desc = "Run all pre-commit hooks" })
+
+-- Trouble (diagnostics)
+map(
+	"n",
+	"<leader>xx",
+	"<cmd>Trouble diagnostics toggle<CR>",
+	{ desc = "Toggle diagnostics (Trouble)" }
+)
+map(
+	"n",
+	"<leader>xX",
+	"<cmd>Trouble diagnostics toggle filter.buf=0<CR>",
+	{ desc = "Buffer diagnostics (Trouble)" }
+)
+map(
+	"n",
+	"<leader>xs",
+	"<cmd>Trouble symbols toggle focus=false<CR>",
+	{ desc = "Symbols (Trouble)" }
+)
+map(
+	"n",
+	"<leader>xl",
+	"<cmd>Trouble lsp toggle focus=false win.position=right<CR>",
+	{ desc = "LSP references (Trouble)" }
+)
+map("n", "<leader>xL", "<cmd>Trouble loclist toggle<CR>", { desc = "Location list (Trouble)" })
+map("n", "<leader>xQ", "<cmd>Trouble qflist toggle<CR>", { desc = "Quickfix list (Trouble)" })

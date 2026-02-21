@@ -3,6 +3,7 @@ return {
 	enabled = true,
 	event = "InsertEnter",
 	dependencies = {
+		"hrsh7th/cmp-nvim-lsp", -- LSP completion source
 		"hrsh7th/cmp-buffer", -- source for text in buffer
 		"hrsh7th/cmp-path", -- source for file system paths
 		"zbirenbaum/copilot-cmp", -- copilot suggestions in cmp

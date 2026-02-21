@@ -1,6 +1,15 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	branch = "0.1.x",
+	cmd = "Telescope",
+	keys = {
+		{ "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find files in cwd" },
+		{ "<leader>fr", "<cmd>Telescope oldfiles<CR>", desc = "Find recent files" },
+		{ "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Find string in cwd" },
+		{ "<leader>fc", "<cmd>Telescope find_files search_dirs=~/.config/nvim<CR>", desc = "Find config files" },
+		{ "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Find buffers" },
+		{ "<leader>U", "<cmd>Telescope undo<CR>", desc = "Toggle undo tree ui" },
+	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons",

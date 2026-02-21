@@ -1,6 +1,6 @@
 return {
 	"Pocco81/auto-save.nvim",
-	lazy = false,
+	event = "BufReadPost",
 	opts = {
 		debounce_delay = 2000,
 	},

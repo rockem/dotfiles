@@ -3,17 +3,16 @@ return {
   enabled = true,
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
   },
   config = function()
     -- Disable stylua LSP (it's a formatter, not an LSP server)
     vim.lsp.enable("stylua", false)
 
-    vim.lsp.enable("lua_ts")
+    vim.lsp.enable("lua_ls")
     vim.lsp.enable("ts_ls")
     vim.lsp.enable("astro")
-    vim.lsp.enable("rust_analyzer")
+
     vim.lsp.enable("basedpyright")
 
     vim.api.nvim_create_autocmd("LspAttach", {
@@ -38,16 +37,6 @@ return {
       },
     })
 
-    -- Configure rust_analyzer
-    vim.lsp.config("rust_analyzer", {
-      settings = {
-        ["rust-analyzer"] = {
-          cargo = {
-            allFeatures = true,
-          },
-        },
-      },
-    })
 
     -- Configure basedpyright
     vim.lsp.config("basedpyright", {
@@ -66,7 +55,7 @@ return {
     -- Change the Diagnostic symbols in the sign column (gutter)
     vim.diagnostic.config({
       virtual_text = true,
-      update_in_insert = true, -- Update diagnostics while typing
+      update_in_insert = false,
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = " ",

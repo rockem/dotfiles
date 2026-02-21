@@ -2,14 +2,14 @@ local opt = vim.opt -- for conciseness
 
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
-opt.number = true         -- shows absolute line number on cursor line (when relative number is on)
-vim.opt.showbreak = '↪ '
+opt.number = true -- shows absolute line number on cursor line (when relative number is on)
+vim.opt.showbreak = "↪ "
 
 -- tabs & indentation
-opt.tabstop = 2       -- 2 spaces for tabs (prettier default)
+opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
 opt.softtabstop = 2
-opt.shiftwidth = 2    -- 2 spaces for indent width
-opt.expandtab = true  -- expand tab to spaces
+opt.shiftwidth = 2 -- 2 spaces for indent width
+opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.smartindent = true
 
@@ -19,7 +19,7 @@ opt.textwidth = 120
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
-opt.smartcase = true  -- if you include mixed case in your search, assumes you want case-sensitive
+opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
 -- cursor line
 opt.cursorline = true -- highlight the current cursor line
@@ -41,13 +41,15 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- backspace
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 
--- clipboard
-opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+-- clipboard (deferred to avoid blocking startup with provider detection)
+vim.schedule(function()
+	opt.clipboard:append("unnamedplus")
+end)
 
 -- Files
 opt.swapfile = false -- turn off swapfile
 opt.backup = false
-opt.autoread = true  -- Turn auto read for changed files
+opt.autoread = true -- Turn auto read for changed files
 opt.history = 50
 opt.autowriteall = true
 
@@ -60,5 +62,10 @@ opt.undofile = true
 opt.wildmode = "longest:full,full"
 opt.wildmenu = true
 
--- Spell
-opt.spell = true
+-- Spell (only for prose filetypes)
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "markdown", "gitcommit", "text", "plaintex" },
+	callback = function()
+		vim.opt_local.spell = true
+	end,
+})

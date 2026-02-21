@@ -1,9 +1,22 @@
 return {
 	"nvim-lualine/lualine.nvim",
+	event = "VeryLazy",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local lualine = require("lualine")
-		local lazy_status = require("lazy.status") -- to configure lazy pending updates count
+
+		-- Helper to safely get neotest status without forcing it to load
+		local function get_neotest_status()
+			local ok, neotest = pcall(require, "neotest")
+			if not ok then
+				return nil
+			end
+			local adapters = neotest.state.adapter_ids()
+			if not adapters or #adapters == 0 then
+				return nil
+			end
+			return neotest.state.status_counts(adapters[1])
+		end
 
 		-- configure lualine with modified theme
 		lualine.setup({
@@ -12,39 +25,31 @@ return {
 			},
 			sections = {
 				lualine_c = {
-					-- { require('auto-session.lib').current_session_name },
 					{ "filename", path = 4 },
 				},
 				lualine_x = {
 					{
 						function()
-							local neotest = require("neotest")
-							local status = neotest.state.status_counts(
-								neotest.state.adapter_ids()[1] or "neotest"
-							)
+							local status = get_neotest_status()
 							if not status then
 								return ""
 							end
 
 							local passed = status.passed or 0
 							local failed = status.failed or 0
-							local skipped = status.skipped or 0
 							local running = status.running or 0
 
 							if running > 0 then
-								return string.format("🧪 Running: %d", running)
+								return string.format("Running: %d", running)
 							elseif failed > 0 then
-								return string.format("✗ %d ✓ %d", failed, passed)
+								return string.format("x %d / %d", failed, passed)
 							elseif passed > 0 then
-								return string.format("✓ %d", passed)
+								return string.format("v %d", passed)
 							end
 							return ""
 						end,
 						color = function()
-							local neotest = require("neotest")
-							local status = neotest.state.status_counts(
-								neotest.state.adapter_ids()[1] or "neotest"
-							)
+							local status = get_neotest_status()
 							if not status then
 								return nil
 							end
