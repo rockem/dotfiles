@@ -30,6 +30,7 @@ return {
         "dart",
         "javascript",
         "typescript",
+        "tsx",
         "astro",
         "rust",
       },

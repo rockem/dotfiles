@@ -32,6 +32,7 @@ return {
 				"flake8",
 				"dart-debug-adapter",
 				"markdownlint",
+				"eslint_d",
 			},
 		})
 	end,

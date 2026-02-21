@@ -1,6 +1,6 @@
 return {
 	"mfussenegger/nvim-lint",
-	ft = { "markdown" },
+	ft = { "markdown", "javascript", "javascriptreact", "typescript", "typescriptreact" },
 	event = "BufWritePost",
 	config = function()
 		local lint = require("lint")
@@ -8,6 +8,10 @@ return {
 		-- Configure linters by filetype
 		lint.linters_by_ft = {
 			markdown = { "markdownlint" },
+			javascript = { "eslint_d" },
+			javascriptreact = { "eslint_d" },
+			typescript = { "eslint_d" },
+			typescriptreact = { "eslint_d" },
 		}
 
 		-- Create autocommand for linting
