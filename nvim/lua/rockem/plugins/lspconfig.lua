@@ -1,70 +1,69 @@
 return {
-  "neovim/nvim-lspconfig",
-  enabled = true,
-  event = { "BufReadPre", "BufNewFile" },
-  dependencies = {
-    { "antosha417/nvim-lsp-file-operations", config = true },
-  },
-  config = function()
-    -- Disable stylua LSP (it's a formatter, not an LSP server)
-    vim.lsp.enable("stylua", false)
+	"neovim/nvim-lspconfig",
+	enabled = true,
+	event = { "BufReadPre", "BufNewFile" },
+	dependencies = {
+		{ "antosha417/nvim-lsp-file-operations", config = true },
+	},
+	config = function()
+		-- Disable stylua LSP (it's a formatter, not an LSP server)
+		vim.lsp.enable("stylua", false)
 
-    vim.lsp.enable("lua_ls")
-    vim.lsp.enable("ts_ls")
-    vim.lsp.enable("astro")
+		vim.lsp.enable("lua_ls")
+		vim.lsp.enable("ts_ls")
+		vim.lsp.enable("astro")
 
-    vim.lsp.enable("basedpyright")
-    vim.lsp.enable("zls")
+		vim.lsp.enable("basedpyright")
+		vim.lsp.enable("zls")
+		vim.lsp.enable("sourcekit")
 
-    vim.api.nvim_create_autocmd("LspAttach", {
-      group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-      callback = require("rockem.plugins.common.lsp-attach").on_attach,
-    })
+		vim.api.nvim_create_autocmd("LspAttach", {
+			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+			callback = require("rockem.plugins.common.lsp-attach").on_attach,
+		})
 
+		-- Configure lua_ls for Neovim
+		vim.lsp.config("lua_ls", {
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { "vim" },
+					},
+					workspace = {
+						library = {
+							vim.env.VIMRUNTIME,
+						},
+					},
+				},
+			},
+		})
 
-    -- Configure lua_ls for Neovim
-    vim.lsp.config("lua_ls", {
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { "vim" },
-          },
-          workspace = {
-            library = {
-              vim.env.VIMRUNTIME,
-            },
-          },
-        },
-      },
-    })
+		-- Configure basedpyright
+		vim.lsp.config("basedpyright", {
+			settings = {
+				basedpyright = {
+					analysis = {
+						typeCheckingMode = "basic",
+						autoSearchPaths = true,
+						useLibraryCodeForTypes = true,
+						diagnosticMode = "openFilesOnly",
+					},
+				},
+			},
+		})
 
-
-    -- Configure basedpyright
-    vim.lsp.config("basedpyright", {
-      settings = {
-        basedpyright = {
-          analysis = {
-            typeCheckingMode = "basic",
-            autoSearchPaths = true,
-            useLibraryCodeForTypes = true,
-            diagnosticMode = "openFilesOnly",
-          },
-        },
-      },
-    })
-
-    -- Change the Diagnostic symbols in the sign column (gutter)
-    vim.diagnostic.config({
-      virtual_text = true,
-      update_in_insert = false,
-      signs = {
-        text = {
-          [vim.diagnostic.severity.ERROR] = " ",
-          [vim.diagnostic.severity.WARN] = " ",
-          [vim.diagnostic.severity.HINT] = "󰠠 ",
-          [vim.diagnostic.severity.INFO] = " ",
-        },
-      },
-    })
-  end,
+		-- Change the Diagnostic symbols in the sign column (gutter)
+		vim.diagnostic.config({
+			virtual_text = true,
+			update_in_insert = false,
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = " ",
+					[vim.diagnostic.severity.WARN] = " ",
+					[vim.diagnostic.severity.HINT] = "󰠠 ",
+					[vim.diagnostic.severity.INFO] = " ",
+				},
+			},
+		})
+	end,
 }

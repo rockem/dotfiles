@@ -33,6 +33,7 @@ return {
 				"dart-debug-adapter",
 				"markdownlint",
 				"eslint_d",
+				"swiftformat",
 			},
 		})
 	end,

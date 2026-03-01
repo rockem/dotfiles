@@ -27,6 +27,7 @@ return {
         svelte = { "prettier" },
         rust = { "rustfmt" },
         zig = { "zigfmt" },
+        swift = { "swiftformat" },
       },
       format_on_save = {
         lsp_fallback = true,
