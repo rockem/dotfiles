@@ -33,6 +33,7 @@ return {
         "tsx",
         "astro",
         "rust",
+        "zig",
       },
       -- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
       context_commentstring = {

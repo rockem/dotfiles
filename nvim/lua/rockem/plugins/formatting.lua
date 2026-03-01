@@ -26,6 +26,7 @@ return {
         typescriptreact = { "prettier" },
         svelte = { "prettier" },
         rust = { "rustfmt" },
+        zig = { "zigfmt" },
       },
       format_on_save = {
         lsp_fallback = true,

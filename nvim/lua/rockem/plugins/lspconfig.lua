@@ -14,6 +14,7 @@ return {
     vim.lsp.enable("astro")
 
     vim.lsp.enable("basedpyright")
+    vim.lsp.enable("zls")
 
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),

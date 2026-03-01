@@ -34,6 +34,7 @@ opt.scrolloff = 8
 opt.isfname:append("@-@")
 opt.colorcolumn = "120"
 opt.shortmess:append("I")
+opt.conceallevel = 1
 
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
