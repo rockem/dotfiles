@@ -5,6 +5,7 @@ return {
 		{
 			"<leader>tt",
 			function()
+				vim.cmd("wa")
 				require("neotest").run.run()
 			end,
 			desc = "Run nearest test",
@@ -12,6 +13,7 @@ return {
 		{
 			"<leader>tf",
 			function()
+				vim.cmd("wa")
 				require("neotest").run.run(vim.fn.expand("%"))
 			end,
 			desc = "Run file tests",
@@ -33,6 +35,7 @@ return {
 		{
 			"<leader>ta",
 			function()
+				vim.cmd("wa")
 				require("neotest").run.run(vim.fn.getcwd())
 			end,
 			desc = "Run all tests",
@@ -47,6 +50,7 @@ return {
 		{
 			"<leader>tl",
 			function()
+				vim.cmd("wa")
 				require("neotest").run.run_last()
 			end,
 			desc = "Run last test",
@@ -58,6 +62,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		"sidlatau/neotest-dart",
 		"mrcjkb/rustaceanvim",
+		"rouge8/neotest-rust",
 		"nvim-neotest/neotest-python",
 	},
 	config = function()
@@ -68,7 +73,7 @@ return {
 					command = "flutter",
 					use_lsp = true,
 				}),
-				require("rustaceanvim.neotest"),
+				require("neotest-rust")({ args = { "--no-capture" } }),
 				require("neotest-python"),
 			},
 			log_level = vim.log.levels.WARN,
