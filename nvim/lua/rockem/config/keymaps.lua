@@ -8,6 +8,24 @@ vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Show Lazy" })
 
 -- Editor
 map("n", "<leader>R", ':<C-u>registers<CR>:normal! "p<Left>', { desc = "Select from register" })
+map("n", "gF", function()
+	local word = vim.fn.expand("<cWORD>")
+	local file, line, col = word:match("([^:]+):(%d+):(%d+)")
+
+	if not file then
+		file, line = word:match("([^:]+):(%d+)")
+	end
+
+	if not file then
+		file = vim.fn.expand("<cfile>")
+	end
+
+	vim.cmd("wincmd w | edit " .. vim.fn.fnameescape(file))
+
+	if line then
+		vim.api.nvim_win_set_cursor(0, { tonumber(line), tonumber(col or 1) - 1 })
+	end
+end, { desc = "Open file under cursor in other window" })
 
 -- Buffer
 map("n", "<C-Tab>", ":b#<CR>")
@@ -38,12 +56,6 @@ map(
 	"<leader>xs",
 	"<cmd>Trouble symbols toggle focus=false<CR>",
 	{ desc = "Symbols (Trouble)" }
-)
-map(
-	"n",
-	"<leader>xl",
-	"<cmd>Trouble lsp toggle focus=false win.position=right<CR>",
-	{ desc = "LSP references (Trouble)" }
 )
 map("n", "<leader>xL", "<cmd>Trouble loclist toggle<CR>", { desc = "Location list (Trouble)" })
 map("n", "<leader>xQ", "<cmd>Trouble qflist toggle<CR>", { desc = "Quickfix list (Trouble)" })

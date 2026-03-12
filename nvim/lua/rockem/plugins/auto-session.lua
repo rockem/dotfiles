@@ -6,6 +6,7 @@ return {
 		require("auto-session").setup({
 			log_level = "error",
 			auto_session_suppress_dirs = { "~/", "~/Downloads", "/", "~/Desktop" },
+			bypass_session_save_file_types = { "terminal" },
 			auto_session_use_git_branch = true,
 			auto_save_enabled = true,
 			auto_restore_enabled = true,
