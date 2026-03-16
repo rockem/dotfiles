@@ -45,6 +45,9 @@ return {
             ["@function"] = { bold = true },
             ["@function.builtin"] = { bold = true },
             ["@method"] = { bold = true },
+            -- Darker completion menu
+            ["Pmenu"] = { bg = colors.mantle },
+            ["PmenuSel"] = { bg = colors.surface0 },
           }
         end,
       })
