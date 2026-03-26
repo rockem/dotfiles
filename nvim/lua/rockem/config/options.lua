@@ -59,6 +59,8 @@ opt.shada = "!,'20,<50,s10,h"
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 
+opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 -- completion
 opt.wildmode = "longest:full,full"
 opt.wildmenu = true

@@ -22,6 +22,9 @@ return {
 			callback = require("rockem.plugins.common.lsp-attach").on_attach,
 		})
 
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
+
 		-- Configure lua_ls for Neovim
 		vim.lsp.config("lua_ls", {
 			settings = {

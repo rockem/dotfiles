@@ -1,0 +1,2 @@
+WRN 2026-03-17T11:21:45.430 ?.35230    server_start:199: Failed to start server: operation not permitted: /var/folders/ms/z6f0235176b8665cqscwlmfr0000m_/T/nvim.e137126/HBgt0d/nvim.35230.0
+WRN 2026-03-17T11:21:49.461 ?.35273    server_start:199: Failed to start server: operation not permitted: /var/folders/ms/z6f0235176b8665cqscwlmfr0000m_/T/nvim.e137126/Tn9SLH/nvim.35273.0

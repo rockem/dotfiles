@@ -138,7 +138,8 @@ Defined in `lua/rockem/config/keymaps.lua`:
 - `<leader>g` - Git: `gp` preview hunk, `gb` blame
 - `<leader>U` - Undo tree
 - `<leader>R` - Registers
-- `<C-Tab>` - Toggle last buffer
+- `<C-Tab>` - Next buffer
+- `<C-S-Tab>` - Previous buffer
 
 ### Adding Keybindings
 
