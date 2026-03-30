@@ -16,6 +16,7 @@ return {
       { "<leader>s", group = "Swap (Treesitter)" },
       { "<leader>t", group = "Test" },
       { "<leader>c", group = "Code" },
+      { "<leader>h", group = "Harpoon" },
     },
     icons = {
       mappings = false,
