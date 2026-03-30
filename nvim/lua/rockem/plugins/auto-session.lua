@@ -9,7 +9,6 @@ return {
       bypass_save_filetypes = { "terminal", "term" },
       close_unsupported_windows = true,
       git_use_branch_name = true,
-      auto_restore_last_session = true,
       pre_save_cmds = { function()
         -- Command to forcefully delete (bd!) all buffers whose names start with 'term://*'
         vim.cmd("bufdo if (bufname() =~ '^term://*') | bd! | endif")
