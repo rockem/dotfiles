@@ -1,4 +1,2 @@
-return {
-  "numToStr/Comment.nvim",
-  keys = { "gc", "gb" },
-}
+vim.pack.add({ "https://github.com/numToStr/Comment.nvim" })
+require("Comment").setup()

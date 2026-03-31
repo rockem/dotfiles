@@ -1,4 +1,1 @@
-return {
-	"RRethy/vim-illuminate",
-	event = "BufReadPost",
-}
+vim.pack.add({ "https://github.com/RRethy/vim-illuminate" })

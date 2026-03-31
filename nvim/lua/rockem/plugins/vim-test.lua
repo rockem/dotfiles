@@ -1,17 +1,14 @@
-return {
-	"vim-test/vim-test",
-	keys = {
-		{ "<leader>tt", "<cmd>wa | TestNearest<CR>", desc = "Run nearest test" },
-		{ "<leader>tf", "<cmd>wa | TestFile<CR>", desc = "Run file tests" },
-		{ "<leader>ta", "<cmd>wa | TestSuite<CR>", desc = "Run all tests" },
-		{ "<leader>tl", "<cmd>wa | TestLast<CR>", desc = "Run last test" },
-		{ "<leader>tv", "<cmd>wa | TestVisit<CR>", desc = "Visit test file" },
-	},
-	config = function()
-		vim.g["test#strategy"] = "neovim_sticky"
-		vim.g["test#neovim#start_normal"] = 1
-		vim.g["test#preserve_screen"] = 0
-		vim.g["test#neovim_sticky#reopen_window"] = 1
-		vim.g["test#neovim_sticky#use_existing"] = 1
-	end,
-}
+vim.pack.add({ "https://github.com/vim-test/vim-test" })
+
+vim.g["test#strategy"] = "neovim_sticky"
+vim.g["test#neovim#start_normal"] = 1
+vim.g["test#preserve_screen"] = 0
+vim.g["test#neovim_sticky#reopen_window"] = 1
+vim.g["test#neovim_sticky#use_existing"] = 1
+
+local map = vim.keymap.set
+map("n", "<leader>tt", "<cmd>wa | TestNearest<CR>", { desc = "Run nearest test" })
+map("n", "<leader>tf", "<cmd>wa | TestFile<CR>", { desc = "Run file tests" })
+map("n", "<leader>ta", "<cmd>wa | TestSuite<CR>", { desc = "Run all tests" })
+map("n", "<leader>tl", "<cmd>wa | TestLast<CR>", { desc = "Run last test" })
+map("n", "<leader>tv", "<cmd>wa | TestVisit<CR>", { desc = "Visit test file" })

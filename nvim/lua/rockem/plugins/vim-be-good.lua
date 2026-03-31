@@ -1,4 +1,1 @@
-return {
-	"ThePrimeagen/vim-be-good",
-	cmd = "VimBeGood",
-}
+vim.pack.add({ "https://github.com/ThePrimeagen/vim-be-good" })

@@ -1,9 +1,6 @@
-return {
-	"Pocco81/auto-save.nvim",
-	enabled = false,
-	event = "BufReadPost",
-	opts = {
-		debounce_delay = 2000,
-		trigger_events = { "InsertLeave", "BufLeave" },
-	},
-}
+-- auto-save is disabled; uncomment to enable
+-- vim.pack.add("https://github.com/Pocco81/auto-save.nvim")
+-- require("auto-save").setup({
+--   debounce_delay = 2000,
+--   trigger_events = { "InsertLeave", "BufLeave" },
+-- })

@@ -1,4 +1,1 @@
-return {
-	"bullets-vim/bullets.vim",
-	ft = { "markdown", "text", "gitcommit" },
-}
+vim.pack.add({ "https://github.com/bullets-vim/bullets.vim" })

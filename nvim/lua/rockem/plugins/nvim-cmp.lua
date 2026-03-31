@@ -1,85 +1,70 @@
-return {
-  "hrsh7th/nvim-cmp",
-  enabled = true,
-  event = "InsertEnter",
-  dependencies = {
-    "hrsh7th/cmp-nvim-lsp",    -- LSP completion source
-    "hrsh7th/cmp-buffer",      -- source for text in buffer
-    "hrsh7th/cmp-path",        -- source for file system paths
-    "zbirenbaum/copilot-cmp",  -- copilot suggestions in cmp
-    "uga-rosa/cmp-dictionary", -- dictionary suggestions in cmp
-    {
-      "L3MON4D3/LuaSnip",
-      -- follow latest release.
-      version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-      -- install jsregexp (optional!).
-      build = "make install_jsregexp",
-    },
-    "saadparwaiz1/cmp_luasnip",     -- for autocompletion
-    "rafamadriz/friendly-snippets", -- useful snippets
-    "onsails/lspkind.nvim"
+vim.pack.add({
+  "https://github.com/hrsh7th/cmp-nvim-lsp",
+  "https://github.com/hrsh7th/cmp-buffer",
+  "https://github.com/hrsh7th/cmp-path",
+  "https://github.com/zbirenbaum/copilot-cmp",
+  "https://github.com/uga-rosa/cmp-dictionary",
+  { src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range(">=2.0,<3.0") },
+  "https://github.com/saadparwaiz1/cmp_luasnip",
+  "https://github.com/rafamadriz/friendly-snippets",
+  "https://github.com/onsails/lspkind.nvim",
+  "https://github.com/hrsh7th/nvim-cmp",
+})
+
+local cmp = require("cmp")
+local luasnip = require("luasnip")
+
+-- Setup copilot-cmp
+require("copilot_cmp").setup()
+
+-- Setup cmp-dictionary
+require("cmp_dictionary").setup({
+  paths = { "/usr/share/dict/words" },
+  exact_length = 2,
+})
+
+-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
+require("luasnip.loaders.from_vscode").lazy_load()
+
+cmp.setup({
+  formatting = {
+    format = require("lspkind").cmp_format({
+      mode = "symbol_text",
+      maxwidth = 30,
+      ellipsis_char = "...",
+    }),
   },
-  config = function()
-    local cmp = require("cmp")
-    local luasnip = require("luasnip")
-
-    -- Setup copilot-cmp
-    require("copilot_cmp").setup()
-
-    -- Setup cmp-dictionary
-    require("cmp_dictionary").setup({
-      paths = { "/usr/share/dict/words" },
-      exact_length = 2,
-    })
-
-    -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
-    require("luasnip.loaders.from_vscode").lazy_load()
-
-    cmp.setup({
-      formatting = {
-        format = require('lspkind').cmp_format({
-          mode = 'symbol_text',
-          maxwidth = 30,         -- Truncates at 50 characters
-          ellipsis_char = '...', -- Character to use for truncation
-        })
-      },
-      window = {
-        completion = cmp.config.window.bordered({
-          winhighlight =
-          "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None"
-        }),
-        documentation = cmp.config.window.bordered({
-          winhighlight =
-          "Normal:Pmenu,FloatBorder:Pmenu,Search:None"
-        }),
-      },
-      completion = {
-        completeopt = "menu,menuone,preview,noselect",
-      },
-      snippet = { -- configure how nvim-cmp interacts with snippet engine
-        expand = function(args)
-          luasnip.lsp_expand(args.body)
-        end,
-      },
-
-      mapping = cmp.mapping.preset.insert({
-        ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-        ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
-        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-        ["<C-e>"] = cmp.mapping.abort(),        -- close completion window
-        ["<CR>"] = cmp.mapping.confirm({ select = false }),
-      }),
-
-      sources = cmp.config.sources({
-        { name = "copilot" },    -- Copilot
-        { name = "nvim_lsp" },   -- LSP
-        { name = "luasnip" },    -- snippets
-        { name = "buffer" },     -- text within current buffer
-        { name = "dictionary" }, -- words from dictionary
-        { name = "path" },       -- file system paths
-      }),
-    })
-  end,
-}
+  window = {
+    completion = cmp.config.window.bordered({
+      winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
+    }),
+    documentation = cmp.config.window.bordered({
+      winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+    }),
+  },
+  completion = {
+    completeopt = "menu,menuone,preview,noselect",
+  },
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ["<C-k>"] = cmp.mapping.select_prev_item(),
+    ["<C-j>"] = cmp.mapping.select_next_item(),
+    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<C-e>"] = cmp.mapping.abort(),
+    ["<CR>"] = cmp.mapping.confirm({ select = false }),
+  }),
+  sources = cmp.config.sources({
+    { name = "copilot" },
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "dictionary" },
+    { name = "path" },
+  }),
+})

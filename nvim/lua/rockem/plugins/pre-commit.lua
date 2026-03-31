@@ -1,4 +1,1 @@
-return {
-  "ttibsi/pre-commit.nvim",
-  cmd = "Precommit",
-}
+vim.pack.add({ "https://github.com/ttibsi/pre-commit.nvim" })
