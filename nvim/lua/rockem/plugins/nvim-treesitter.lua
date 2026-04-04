@@ -1,6 +1,9 @@
 vim.pack.add({
-  "https://github.com/nvim-treesitter/nvim-treesitter",
-  "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
+  {
+    src = "https://github.com/nvim-treesitter/nvim-treesitter",
+    branch = "main"
+  },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects", branch = "main" },
   "https://github.com/nvim-treesitter/nvim-treesitter-context",
 })
 
@@ -45,36 +48,65 @@ require("nvim-treesitter-textobjects").setup({
   },
 })
 
-local map = vim.keymap.set
+local map     = vim.keymap.set
+local ts_sel  = require("nvim-treesitter-textobjects.select")
+local ts_swap = require("nvim-treesitter-textobjects.swap")
+local ts_move = require("nvim-treesitter-textobjects.move")
 
 -- Select text objects
-map({ "x", "o" }, "af", function() require("nvim-treesitter-textobjects.select").select_textobject("@function.outer", "textobjects") end, { desc = "Select outer part of a function" })
-map({ "x", "o" }, "if", function() require("nvim-treesitter-textobjects.select").select_textobject("@function.inner", "textobjects") end, { desc = "Select inner part of a function" })
-map({ "x", "o" }, "ac", function() require("nvim-treesitter-textobjects.select").select_textobject("@class.outer", "textobjects") end, { desc = "Select outer part of a class" })
-map({ "x", "o" }, "ic", function() require("nvim-treesitter-textobjects.select").select_textobject("@class.inner", "textobjects") end, { desc = "Select inner part of a class" })
-map({ "x", "o" }, "aa", function() require("nvim-treesitter-textobjects.select").select_textobject("@parameter.outer", "textobjects") end, { desc = "Select outer part of a parameter" })
-map({ "x", "o" }, "ia", function() require("nvim-treesitter-textobjects.select").select_textobject("@parameter.inner", "textobjects") end, { desc = "Select inner part of a parameter" })
-map({ "x", "o" }, "ai", function() require("nvim-treesitter-textobjects.select").select_textobject("@conditional.outer", "textobjects") end, { desc = "Select outer part of a conditional" })
-map({ "x", "o" }, "ii", function() require("nvim-treesitter-textobjects.select").select_textobject("@conditional.inner", "textobjects") end, { desc = "Select inner part of a conditional" })
-map({ "x", "o" }, "al", function() require("nvim-treesitter-textobjects.select").select_textobject("@loop.outer", "textobjects") end, { desc = "Select outer part of a loop" })
-map({ "x", "o" }, "il", function() require("nvim-treesitter-textobjects.select").select_textobject("@loop.inner", "textobjects") end, { desc = "Select inner part of a loop" })
-map({ "x", "o" }, "ab", function() require("nvim-treesitter-textobjects.select").select_textobject("@block.outer", "textobjects") end, { desc = "Select outer part of a block" })
-map({ "x", "o" }, "ib", function() require("nvim-treesitter-textobjects.select").select_textobject("@block.inner", "textobjects") end, { desc = "Select inner part of a block" })
+map({ "x", "o" }, "af", function() ts_sel.select_textobject("@function.outer", "textobjects") end,
+  { desc = "Select outer part of a function" })
+map({ "x", "o" }, "if", function() ts_sel.select_textobject("@function.inner", "textobjects") end,
+  { desc = "Select inner part of a function" })
+map({ "x", "o" }, "ac", function() ts_sel.select_textobject("@class.outer", "textobjects") end,
+  { desc = "Select outer part of a class" })
+map({ "x", "o" }, "ic", function() ts_sel.select_textobject("@class.inner", "textobjects") end,
+  { desc = "Select inner part of a class" })
+map({ "x", "o" }, "aa", function() ts_sel.select_textobject("@parameter.outer", "textobjects") end,
+  { desc = "Select outer part of a parameter" })
+map({ "x", "o" }, "ia", function() ts_sel.select_textobject("@parameter.inner", "textobjects") end,
+  { desc = "Select inner part of a parameter" })
+map({ "x", "o" }, "ai", function() ts_sel.select_textobject("@conditional.outer", "textobjects") end,
+  { desc = "Select outer part of a conditional" })
+map({ "x", "o" }, "ii", function() ts_sel.select_textobject("@conditional.inner", "textobjects") end,
+  { desc = "Select inner part of a conditional" })
+map({ "x", "o" }, "al", function() ts_sel.select_textobject("@loop.outer", "textobjects") end,
+  { desc = "Select outer part of a loop" })
+map({ "x", "o" }, "il", function() ts_sel.select_textobject("@loop.inner", "textobjects") end,
+  { desc = "Select inner part of a loop" })
+map({ "x", "o" }, "ab", function() ts_sel.select_textobject("@block.outer", "textobjects") end,
+  { desc = "Select outer part of a block" })
+map({ "x", "o" }, "ib", function() ts_sel.select_textobject("@block.inner", "textobjects") end,
+  { desc = "Select inner part of a block" })
 
 -- Swap text objects
-map("n", "<leader>sn", function() require("nvim-treesitter-textobjects.swap").swap_next("@parameter.inner") end, { desc = "Swap parameter with next" })
-map("n", "<leader>sp", function() require("nvim-treesitter-textobjects.swap").swap_previous("@parameter.inner") end, { desc = "Swap parameter with previous" })
-map("n", "<leader>sm", function() require("nvim-treesitter-textobjects.swap").swap_next("@function.outer") end, { desc = "Swap function with next" })
-map("n", "<leader>sM", function() require("nvim-treesitter-textobjects.swap").swap_previous("@function.outer") end, { desc = "Swap function with previous" })
+map("n", "<leader>sn", function() ts_swap.swap_next("@parameter.inner") end,
+  { desc = "Swap parameter with next" })
+map("n", "<leader>sp", function() ts_swap.swap_previous("@parameter.inner") end,
+  { desc = "Swap parameter with previous" })
+map("n", "<leader>sm", function() ts_swap.swap_next("@function.outer") end,
+  { desc = "Swap function with next" })
+map("n", "<leader>sM", function() ts_swap.swap_previous("@function.outer") end,
+  { desc = "Swap function with previous" })
 
 -- Move to next/previous text objects
-map({ "n", "x", "o" }, "]m", function() require("nvim-treesitter-textobjects.move").goto_next_start("@function.outer", "textobjects") end, { desc = "Next function start" })
-map({ "n", "x", "o" }, "]M", function() require("nvim-treesitter-textobjects.move").goto_next_end("@function.outer", "textobjects") end, { desc = "Next function end" })
-map({ "n", "x", "o" }, "[m", function() require("nvim-treesitter-textobjects.move").goto_previous_start("@function.outer", "textobjects") end, { desc = "Previous function start" })
-map({ "n", "x", "o" }, "[M", function() require("nvim-treesitter-textobjects.move").goto_previous_end("@function.outer", "textobjects") end, { desc = "Previous function end" })
-map({ "n", "x", "o" }, "]a", function() require("nvim-treesitter-textobjects.move").goto_next_start("@parameter.inner", "textobjects") end, { desc = "Next parameter start" })
-map({ "n", "x", "o" }, "[a", function() require("nvim-treesitter-textobjects.move").goto_previous_start("@parameter.inner", "textobjects") end, { desc = "Previous parameter start" })
-map({ "n", "x", "o" }, "]i", function() require("nvim-treesitter-textobjects.move").goto_next_start("@conditional.outer", "textobjects") end, { desc = "Next conditional start" })
-map({ "n", "x", "o" }, "[i", function() require("nvim-treesitter-textobjects.move").goto_previous_start("@conditional.outer", "textobjects") end, { desc = "Previous conditional start" })
-map({ "n", "x", "o" }, "]l", function() require("nvim-treesitter-textobjects.move").goto_next_start("@loop.outer", "textobjects") end, { desc = "Next loop start" })
-map({ "n", "x", "o" }, "[l", function() require("nvim-treesitter-textobjects.move").goto_previous_start("@loop.outer", "textobjects") end, { desc = "Previous loop start" })
+map({ "n", "x", "o" }, "]m", function() ts_move.goto_next_start("@function.outer", "textobjects") end,
+  { desc = "Next function start" })
+map({ "n", "x", "o" }, "]M", function() ts_move.goto_next_end("@function.outer", "textobjects") end,
+  { desc = "Next function end" })
+map({ "n", "x", "o" }, "[m", function() ts_move.goto_previous_start("@function.outer", "textobjects") end,
+  { desc = "Previous function start" })
+map({ "n", "x", "o" }, "[M", function() ts_move.goto_previous_end("@function.outer", "textobjects") end,
+  { desc = "Previous function end" })
+map({ "n", "x", "o" }, "]a", function() ts_move.goto_next_start("@parameter.inner", "textobjects") end,
+  { desc = "Next parameter start" })
+map({ "n", "x", "o" }, "[a", function() ts_move.goto_previous_start("@parameter.inner", "textobjects") end,
+  { desc = "Previous parameter start" })
+map({ "n", "x", "o" }, "]i", function() ts_move.goto_next_start("@conditional.outer", "textobjects") end,
+  { desc = "Next conditional start" })
+map({ "n", "x", "o" }, "[i", function() ts_move.goto_previous_start("@conditional.outer", "textobjects") end,
+  { desc = "Previous conditional start" })
+map({ "n", "x", "o" }, "]l", function() ts_move.goto_next_start("@loop.outer", "textobjects") end,
+  { desc = "Next loop start" })
+map({ "n", "x", "o" }, "[l", function() ts_move.goto_previous_start("@loop.outer", "textobjects") end,
+  { desc = "Previous loop start" })

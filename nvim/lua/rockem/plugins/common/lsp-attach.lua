@@ -8,6 +8,8 @@ M.on_attach = function(ev)
 		-- Disable hover in favor of Pyright
 		client.server_capabilities.hoverProvider = false
 	end
+
+	require("lsp-endhints").enable()
 	-- Buffer local mappings.
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	local opts = { buffer = ev.buf, silent = true }

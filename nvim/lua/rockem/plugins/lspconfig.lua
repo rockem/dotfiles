@@ -1,9 +1,11 @@
 vim.pack.add({
-  "https://github.com/antosha417/nvim-lsp-file-operations",
-  "https://github.com/neovim/nvim-lspconfig",
+	"https://github.com/antosha417/nvim-lsp-file-operations",
+	"https://github.com/neovim/nvim-lspconfig",
+	"https://github.com/chrisgrieser/nvim-lsp-endhints",
 })
 
 require("lsp-file-operations").setup()
+require("lsp-endhints").setup()
 
 -- Disable stylua LSP (it's a formatter, not an LSP server)
 vim.lsp.enable("stylua", false)
@@ -17,8 +19,8 @@ vim.lsp.enable("zls")
 vim.lsp.enable("sourcekit")
 
 vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-  callback = require("rockem.plugins.common.lsp-attach").on_attach,
+	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+	callback = require("rockem.plugins.common.lsp-attach").on_attach,
 })
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -26,44 +28,44 @@ capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
 
 -- Configure lua_ls for Neovim
 vim.lsp.config("lua_ls", {
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { "vim" },
-      },
-      workspace = {
-        library = {
-          vim.env.VIMRUNTIME,
-        },
-      },
-    },
-  },
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+			workspace = {
+				library = {
+					vim.env.VIMRUNTIME,
+				},
+			},
+		},
+	},
 })
 
 -- Configure basedpyright
 vim.lsp.config("basedpyright", {
-  settings = {
-    basedpyright = {
-      analysis = {
-        typeCheckingMode = "basic",
-        autoSearchPaths = true,
-        useLibraryCodeForTypes = true,
-        diagnosticMode = "openFilesOnly",
-      },
-    },
-  },
+	settings = {
+		basedpyright = {
+			analysis = {
+				typeCheckingMode = "basic",
+				autoSearchPaths = true,
+				useLibraryCodeForTypes = true,
+				diagnosticMode = "openFilesOnly",
+			},
+		},
+	},
 })
 
 -- Change the Diagnostic symbols in the sign column (gutter)
 vim.diagnostic.config({
-  virtual_text = true,
-  update_in_insert = true,
-  signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = " ",
-      [vim.diagnostic.severity.WARN] = " ",
-      [vim.diagnostic.severity.HINT] = "󰠠 ",
-      [vim.diagnostic.severity.INFO] = " ",
-    },
-  },
+	virtual_text = true,
+	update_in_insert = true,
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = " ",
+			[vim.diagnostic.severity.WARN] = " ",
+			[vim.diagnostic.severity.HINT] = "󰠠 ",
+			[vim.diagnostic.severity.INFO] = " ",
+		},
+	},
 })
