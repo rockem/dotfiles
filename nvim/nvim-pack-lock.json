@@ -53,10 +53,6 @@
       "rev": "faa347cef2a9429eec14dada549e000a3b8d0fc9",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
-    "dressing.nvim": {
-      "rev": "2d7c2db2507fa3c4956142ee607431ddb2828639",
-      "src": "https://github.com/stevearc/dressing.nvim"
-    },
     "flutter-tools.nvim": {
       "rev": "677cc07c16e8b89999108d2ebeefcfc5f539b73c",
       "src": "https://github.com/nvim-flutter/flutter-tools.nvim"
