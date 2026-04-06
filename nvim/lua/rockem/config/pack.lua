@@ -61,9 +61,7 @@ require("rockem.plugins.comment")
 require("rockem.plugins.rustaceanvim")
 require("rockem.plugins.flutter-tools")
 require("rockem.plugins.debugging")
--- require("rockem.plugins.neotest")  -- disabled
 require("rockem.plugins.vim-test")
--- require("rockem.plugins.auto-save")  -- disabled
 require("rockem.plugins.bullets")
 require("rockem.plugins.markdown-preview")
 require("rockem.plugins.render-markdown")
