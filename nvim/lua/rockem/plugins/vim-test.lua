@@ -6,8 +6,6 @@ vim.g["test#preserve_screen"] = 0
 vim.g["test#neovim_sticky#reopen_window"] = 1
 vim.g["test#neovim_sticky#use_existing"] = 1
 
--- vim.g["test#rust#runner"] = "nextest"
-
 vim.cmd([[
   function! NexTestTransform(cmd) abort
     return substitute(a:cmd, '\(cargo nextest run\) ''\w\+::\(.\+\)\''', '\1 \2', '')

@@ -1,5 +1,6 @@
 -- Auto-install without confirmation prompt (confirm = true would block init.lua)
 local _pack_add = vim.pack.add
+---@diagnostic disable-next-line: duplicate-set-field
 vim.pack.add = function(specs)
 	return _pack_add(specs, { confirm = false })
 end
