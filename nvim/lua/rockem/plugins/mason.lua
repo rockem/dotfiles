@@ -15,14 +15,14 @@ require("mason-lspconfig").setup({
     "ts_ls",
     "zls",
   },
-  automatic_installation = true,
 })
 
 require("mason-tool-installer").setup({
   ensure_installed = {
     "debugpy",
-    "flake8",
     "dart-debug-adapter",
+    "prettier",
+    "stylua",
     "markdownlint",
     "eslint_d",
     "swiftformat",

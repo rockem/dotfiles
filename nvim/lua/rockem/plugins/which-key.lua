@@ -15,6 +15,8 @@ require("which-key").setup({
     { "<leader>t", group = "Test" },
     { "<leader>c", group = "Code" },
     { "<leader>h", group = "Harpoon" },
+    { "<leader>p", group = "Plugins" },
+    { "<leader>m", group = "Markdown" },
   },
   icons = {
     mappings = false,

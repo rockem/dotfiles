@@ -1,1 +1,6 @@
-/Users/e137126/Library/Application Support/lazygit/config.yml
+customCommands:
+  - key: "H"
+    context: "global"
+    description: "Open current repository homepage in browser"
+    command: "gh repo view --web"
+    loadingText: "Opening repository homepage..."

@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd("FileType", {
 local ensure_installed = {
   "json", "yaml", "markdown", "markdown_inline", "html", "bash", "lua",
   "dockerfile", "gitignore", "python", "dart", "javascript", "typescript",
-  "tsx", "astro", "rust", "zig",
+  "tsx", "astro", "rust", "zig", "swift",
 }
 for _, lang in ipairs(ensure_installed) do
   local ok = pcall(vim.treesitter.language.inspect, lang)
@@ -32,6 +32,8 @@ for _, lang in ipairs(ensure_installed) do
     pcall(require("nvim-treesitter.install").install, lang)
   end
 end
+
+require("treesitter-context").setup()
 
 -- Textobjects setup
 require("nvim-treesitter-textobjects").setup({

@@ -41,7 +41,7 @@ M.on_attach = function(ev)
 	keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
 
 	opts.desc = "Show line diagnostics"
-	keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
+	keymap.set("n", "<leader>cd", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
 	opts.desc = "Show documentation for what is under cursor"
 	keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor

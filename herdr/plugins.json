@@ -1,0 +1,333 @@
+[
+  {
+    "plugin_id": "cantona.herdr-revive",
+    "name": "herdr-revive",
+    "version": "0.3.0",
+    "min_herdr_version": "0.9.1",
+    "description": "Save and restore sessions, reusable workspace layouts, and exact agent sessions",
+    "manifest_path": "/Users/elisegal/.config/herdr/plugins/github-installations/cantona.herdr-revive-bccb9fcefda6/4330-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/Users/elisegal/.config/herdr/plugins/github-installations/cantona.herdr-revive-bccb9fcefda6/4330-0/checkout",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "build": [
+      {
+        "command": [
+          "cargo",
+          "build",
+          "--release",
+          "--locked"
+        ]
+      }
+    ],
+    "startup": [
+      {
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "event"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "autosave",
+        "title": "Run configured autosave",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "autosave"
+        ]
+      },
+      {
+        "id": "delete-space",
+        "title": "Delete a saved space",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "sh",
+          "-c",
+          "exec \"$HERDR_BIN_PATH\" plugin pane open --plugin \"$HERDR_PLUGIN_ID\" --entrypoint delete-space"
+        ]
+      },
+      {
+        "id": "list",
+        "title": "List saved sessions",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "list"
+        ]
+      },
+      {
+        "id": "manage",
+        "title": "Manage saved sessions and spaces",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "sh",
+          "-c",
+          "exec \"$HERDR_BIN_PATH\" plugin pane open --plugin \"$HERDR_PLUGIN_ID\" --entrypoint manage"
+        ]
+      },
+      {
+        "id": "open-space",
+        "title": "Open a saved space",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "sh",
+          "-c",
+          "exec \"$HERDR_BIN_PATH\" plugin pane open --plugin \"$HERDR_PLUGIN_ID\" --entrypoint open-space"
+        ]
+      },
+      {
+        "id": "preview",
+        "title": "Preview session restore",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "preview"
+        ]
+      },
+      {
+        "id": "restore",
+        "title": "Restore session snapshot",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "restore"
+        ]
+      },
+      {
+        "id": "save",
+        "title": "Save session snapshot",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "save"
+        ]
+      },
+      {
+        "id": "save-space",
+        "title": "Save this workspace as a named space",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "sh",
+          "-c",
+          "exec \"$HERDR_BIN_PATH\" plugin pane open --plugin \"$HERDR_PLUGIN_ID\" --entrypoint save-space"
+        ]
+      },
+      {
+        "id": "timer",
+        "title": "Start periodic autosave pane",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "sh",
+          "-c",
+          "exec \"$HERDR_BIN_PATH\" plugin pane open --plugin \"$HERDR_PLUGIN_ID\" --entrypoint autosave"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "pane.agent_detected",
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "event"
+        ]
+      },
+      {
+        "on": "pane.agent_status_changed",
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "event"
+        ]
+      },
+      {
+        "on": "pane.closed",
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "event"
+        ]
+      },
+      {
+        "on": "pane.created",
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "event"
+        ]
+      },
+      {
+        "on": "pane.exited",
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "event"
+        ]
+      },
+      {
+        "on": "tab.closed",
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "event"
+        ]
+      },
+      {
+        "on": "tab.created",
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "event"
+        ]
+      },
+      {
+        "on": "tab.renamed",
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "event"
+        ]
+      },
+      {
+        "on": "workspace.closed",
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "event"
+        ]
+      },
+      {
+        "on": "workspace.created",
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "event"
+        ]
+      },
+      {
+        "on": "workspace.renamed",
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "event"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "autosave",
+        "title": "herdr-revive periodic autosave",
+        "placement": "split",
+        "command": [
+          "target/release/herdr-revive",
+          "--host",
+          "herdr",
+          "timer"
+        ]
+      },
+      {
+        "id": "delete-space",
+        "title": "Delete a saved space",
+        "placement": "popup",
+        "width": "80%",
+        "height": "80%",
+        "command": [
+          "sh",
+          "scripts/manage.sh",
+          "delete-space"
+        ]
+      },
+      {
+        "id": "manage",
+        "title": "herdr-revive",
+        "placement": "popup",
+        "width": "80%",
+        "height": "80%",
+        "command": [
+          "sh",
+          "scripts/manage.sh"
+        ]
+      },
+      {
+        "id": "open-space",
+        "title": "Open a saved space",
+        "placement": "popup",
+        "width": "80%",
+        "height": "80%",
+        "command": [
+          "sh",
+          "scripts/manage.sh",
+          "open-space"
+        ]
+      },
+      {
+        "id": "save-space",
+        "title": "Save this workspace as a named space",
+        "placement": "popup",
+        "width": "80%",
+        "height": "80%",
+        "command": [
+          "sh",
+          "scripts/manage.sh",
+          "save-space"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "cantona",
+      "repo": "herdr-revive",
+      "requested_ref": "v0.3.0",
+      "resolved_commit": "46e6c75be70c9d569c7e7fc5f2d2c32fc16172f3",
+      "managed_path": "/Users/elisegal/.config/herdr/plugins/github-installations/cantona.herdr-revive-bccb9fcefda6/4330-0/checkout",
+      "installed_unix_ms": 1794719396677
+    }
+  }
+]

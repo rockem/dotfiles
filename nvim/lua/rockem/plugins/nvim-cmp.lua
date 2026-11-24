@@ -2,7 +2,6 @@ vim.pack.add({
   "https://github.com/hrsh7th/cmp-nvim-lsp",
   "https://github.com/hrsh7th/cmp-buffer",
   "https://github.com/hrsh7th/cmp-path",
-  "https://github.com/zbirenbaum/copilot-cmp",
   "https://github.com/uga-rosa/cmp-dictionary",
   { src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range(">=2.0,<3.0") },
   "https://github.com/saadparwaiz1/cmp_luasnip",
@@ -13,9 +12,6 @@ vim.pack.add({
 
 local cmp = require("cmp")
 local luasnip = require("luasnip")
-
--- Setup copilot-cmp
-require("copilot_cmp").setup()
 
 -- Setup cmp-dictionary
 require("cmp_dictionary").setup({
@@ -60,7 +56,6 @@ cmp.setup({
     ["<CR>"] = cmp.mapping.confirm({ select = false }),
   }),
   sources = cmp.config.sources({
-    { name = "copilot" },
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },

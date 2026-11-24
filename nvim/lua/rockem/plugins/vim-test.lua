@@ -20,3 +20,19 @@ map("n", "<leader>tf", "<cmd>wa | TestFile<CR>", { desc = "Run file tests" })
 map("n", "<leader>ta", "<cmd>wa | TestSuite<CR>", { desc = "Run all tests" })
 map("n", "<leader>tl", "<cmd>wa | TestLast<CR>", { desc = "Run last test" })
 map("n", "<leader>tv", "<cmd>wa | TestVisit<CR>", { desc = "Visit test file" })
+
+-- Swift: Xcode projects use the custom `xcodetest` runner (autoload/test/swift/xcodetest.vim);
+-- SwiftPM packages use vim-test's built-in runner, which needs the cwd at the Package.swift directory.
+vim.g["test#custom_runners"] = { swift = { "XcodeTest" } }
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "swift",
+  callback = function(ev)
+    local name = vim.api.nvim_buf_get_name(ev.buf)
+    local pkg = vim.fs.find("Package.swift", { path = name, upward = true })[1]
+    if pkg then
+      vim.g["test#project_root"] = vim.fs.dirname(pkg)
+    else
+      vim.g["test#project_root"] = vim.fn["test#swift#xcodetest#root"]
+    end
+  end,
+})

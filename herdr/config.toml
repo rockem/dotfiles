@@ -1,0 +1,58 @@
+onboarding = false
+
+[theme]
+name = "catppuccin"
+auto_switch = false
+
+[terminal]
+# New panes/tabs/workspaces start in the directory of the pane you split from.
+new_cwd = "follow"
+
+[keys]
+prefix = "ctrl+s"
+
+# Pane navigation / layout (vim-style hjkl defaults kept); add quick toggles.
+last_pane = "prefix+;"
+previous_workspace = "prefix+["
+next_workspace = "prefix+]"
+move_tab_previous = "prefix+<"
+move_tab_next = "prefix+>"
+clear_pane = "prefix+ctrl+k"
+
+# Navigate mode (prefix+w): j/k move through spaces, arrows still work.
+navigate_workspace_down = ["down", "j"]
+navigate_workspace_up = ["up", "k"]
+
+# tmux-style split aliases are already v / minus; popup tools below.
+[[keys.command]]
+key = "prefix+alt+g"
+type = "popup"
+command = "lazygit"
+width = "85%"
+height = "85%"
+
+[ui]
+mouse_capture = true
+copy_on_select = true
+mouse_scroll_lines = 3
+confirm_close = true
+status_indicators = "symbols"
+show_agent_labels_on_pane_borders = true
+window_title = "{workspace} · {tab}"
+
+# Notify when a background agent finishes or needs input.
+[ui.toast]
+delivery = "system"
+delay_seconds = 1
+
+[ui.sound]
+enabled = true
+
+[session]
+resume_agents_on_restore = true
+
+[experimental]
+pane_history = true
+
+[advanced]
+scrollback_limit_bytes = 20000000

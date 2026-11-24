@@ -4,8 +4,6 @@ vim.g.maplocalleader = " "
 
 local map = vim.keymap.set -- for conciseness
 
-vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Show Lazy" })
-
 -- Editor
 map("n", "<leader>R", ':<C-u>registers<CR>:normal! "p<Left>', { desc = "Select from register" })
 map("n", "gF", function()
@@ -33,7 +31,7 @@ map("i", "<C-Tab>", "<esc>:b#<CR>")
 
 -- Git
 map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview git changes" })
-map("n", "<leader>gb", "<cmd>Git blame<CR>", { desc = "Git blame" })
+map("n", "<leader>gb", "<cmd>Gitsigns blame<CR>", { desc = "Git blame" })
 
 -- Pre commit
 vim.keymap.set("n", "<leader>cp", "<cmd>Precommit<CR>", { desc = "Run all pre-commit hooks" })
@@ -59,3 +57,9 @@ map(
 )
 map("n", "<leader>xL", "<cmd>Trouble loclist toggle<CR>", { desc = "Location list (Trouble)" })
 map("n", "<leader>xQ", "<cmd>Trouble qflist toggle<CR>", { desc = "Quickfix list (Trouble)" })
+
+map("n", "<leader>yl", function()
+	local ref = "@" .. vim.fn.expand("%:.") .. ":" .. vim.fn.line(".")
+	vim.fn.setreg("+", ref)
+	vim.notify("Copied " .. ref)
+end, { desc = "Copy file:line to clipboard" })

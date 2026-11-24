@@ -25,7 +25,7 @@ conform.setup({
     swift = { "swiftformat" },
   },
   format_on_save = {
-    lsp_fallback = true,
+    lsp_format = "fallback",
     async = false,
     timeout_ms = 5000,
   },
@@ -33,7 +33,7 @@ conform.setup({
 
 vim.keymap.set({ "n", "v" }, "<leader>cf", function()
   conform.format({
-    lsp_fallback = true,
+    lsp_format = "fallback",
     async = false,
     timeout_ms = 1000,
   })

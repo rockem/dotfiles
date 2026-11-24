@@ -4,181 +4,84 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Architecture Overview
 
-This is a **Neovim configuration** using lazy.nvim as the plugin manager. The configuration follows a modular structure with clear separation of concerns:
+A **Neovim 0.12+ configuration** using the built-in **`vim.pack`** plugin manager (not lazy.nvim). Plugins are pinned in `nvim-pack-lock.json`.
 
-- **Entry point**: `init.lua` → loads `rockem.config`
-- **Core config**: `lua/rockem/config/` (keymaps, options, lazy bootstrap)
-- **Plugins**: `lua/rockem/plugins/` (one file per plugin, auto-discovered)
-- **Shared utilities**: `lua/rockem/plugins/common/` (e.g., lsp-attach.lua)
+- **Entry point**: `init.lua` → `rockem.config` (`lua/rockem/config/init.lua`)
+- **Load order**: `keymaps` → `options` → `pack`
+- **Plugin loader**: `lua/rockem/config/pack.lua` — registers build hooks, then `require`s each plugin file **explicitly, in dependency order**
+- **Plugins**: `lua/rockem/plugins/<name>.lua` — one file per plugin: `vim.pack.add({...})` followed by its setup and keymaps
+- **Shared utilities**: `lua/rockem/plugins/common/lsp-attach.lua`
+- **Custom vim-test runner**: `autoload/test/swift/xcodetest.vim`
 
-### Key Patterns
-
-1. **Plugin Auto-Discovery**: lazy.nvim automatically imports all files from `lua/rockem/plugins/`
-2. **Lazy Loading**: Most plugins load on events (`BufReadPre`, `InsertEnter`) or commands
-3. **Shared LSP Config**: LSP keybindings centralized in `lua/rockem/plugins/common/lsp-attach.lua`
-4. **Modern Neovim API**: Uses Neovim 0.11+ built-in LSP methods (`vim.lsp.enable()`, `vim.lsp.config()`)
+All Lua modules live under the personal `rockem.*` namespace.
 
 ## Plugin Management
 
-### Adding a New Plugin
+### Adding a plugin
 
-Create a new file in `lua/rockem/plugins/plugin-name.lua`:
+1. Create `lua/rockem/plugins/plugin-name.lua`:
 
 ```lua
-return {
-  "author/plugin-name",
-  event = "VeryLazy",  -- or appropriate lazy-load trigger
-  dependencies = { "required/dependency" },
-  config = function()
-    require("plugin-name").setup({
-      -- configuration
-    })
-  end,
-}
+vim.pack.add({ "https://github.com/author/plugin-name" })
+require("plugin-name").setup({})
 ```
 
-**Common lazy-load triggers**:
+2. **Add `require("rockem.plugins.plugin-name")` to `lua/rockem/config/pack.lua`** — files are NOT auto-discovered. An unlisted file never loads.
+3. Pin versions with `{ src = "...", version = "tag" | vim.version.range(">=1,<2") | branch }` where needed.
+4. If the plugin needs a build step, add a branch to the `PackChanged` autocmd in `pack.lua`.
 
-- `event = "BufReadPre"` - Load when reading buffers
-- `event = "InsertEnter"` - Load when entering insert mode
-- `cmd = "CommandName"` - Load when command is executed
-- `lazy = false` - Load immediately (for critical plugins)
+`pack.lua` wraps `vim.pack.add` to pass `confirm = false` (no install prompt). There is no lazy loading: every plugin loads at startup.
 
-## LSP Configuration
+Update with `:lua vim.pack.update()`; inspect with `:lua vim.pack.get()`.
 
-### Adding LSP for a New Language
+## LSP
 
-1. **Add to mason.lua**: Include server in `ensure_installed` list
-2. **Enable in lspconfig.lua**: Add `vim.lsp.enable("server_name")`
-3. **Custom config (optional)**: Use `vim.lsp.config("server_name", { settings = {...} })`
+- **mason.nvim** installs servers and tools (`mason.lua`: `ensure_installed` for servers, `mason-tool-installer` for formatters/linters/debug adapters).
+- **Servers are enabled explicitly** in `lspconfig.lua` via `vim.lsp.enable(...)`; per-server settings use `vim.lsp.config(...)`.
+- Currently enabled: lua_ls, ts_ls, astro, basedpyright, ruff, zls, sourcekit.
+- Rust is handled by **rustaceanvim** and Dart/Flutter by **flutter-tools**, not by `vim.lsp.enable`.
+- Buffer-local LSP keymaps live in `common/lsp-attach.lua` (attached via `LspAttach`; flutter-tools reuses the same `on_attach`).
 
-LSP keybindings automatically attach via the `LspAttach` autocmd → `common/lsp-attach.lua`.
+To add a language: add the server to `mason.lua`, then `vim.lsp.enable("name")` in `lspconfig.lua`.
 
-### LSP Architecture
+### LSP keymaps (buffer-local)
 
-- **mason.nvim**: Installs LSP servers, formatters, linters
-- **mason-lspconfig**: Bridges mason to nvim-lspconfig
-- **lspconfig.lua**: Configures LSP servers using Neovim 0.11+ API
-- **lsp-attach.lua**: Shared keybindings for all LSP clients
+`gR` references (Telescope), `gd` definition, `gD` declaration, `gi` implementations, `gt` type definitions, `K` hover, `<leader>ca` code action, `<leader>rn` rename, `<leader>cd` line diagnostics, `<leader>D` buffer diagnostics, `<leader>rs` restart LSP.
 
-**Current LSP servers**: lua_ls, pyright, ruff, astro, ts_ls, ocamllsp, rust_analyzer
+## Formatting & Linting
 
-### LSP Keybindings (Buffer-local)
+- **conform.nvim** (`formatting.lua`): format on save (`lsp_format = "fallback"`, 5s timeout); manual `<leader>cf`. Formatters by filetype: prettier (yaml/markdown/json/js/ts/astro/svelte), stylua (lua, config in `.stylua.toml`), isort+black (python), rustfmt, zigfmt, swiftformat.
+- **nvim-lint** (`linting.lua`): markdownlint, eslint_d; runs only if the linter executable exists. Manual `<leader>cl`.
 
-Set in `lua/rockem/plugins/common/lsp-attach.lua`:
+## Completion
 
-- `gR` - References
-- `gd` - Definition
-- `gD` - Declaration
-- `gi` - Implementation
-- `gt` - Type definition
-- `K` - Hover documentation
-- `<leader>ca` - Code actions
-- `<leader>rn` - Rename symbol
-- `<leader>d` - Line diagnostics
-- `<leader>D` - Buffer diagnostics
-- `<leader>rs` - Restart LSP
-
-## Formatting
-
-Handled by **conform.nvim** (`lua/rockem/plugins/formatting.lua`):
-
-- **Auto-format on save**: Enabled (5s timeout)
-- **Manual format**: `<leader>cf`
-
-**Formatters by language**:
-
-- YAML/Markdown/JSON → prettier
-- Lua → stylua (config: `.stylua.toml`, column_width=100)
-- Python → isort + black
-
-To add a formatter: Add to `formatters_by_ft` in formatting.lua, ensure tool installed via mason.
-
-## Completion System
-
-**Architecture** (`lua/rockem/plugins/nvim-cmp.lua`):
-
-- Engine: nvim-cmp
-- Snippet engine: LuaSnip
-- Sources (priority): copilot → nvim_lsp → luasnip → buffer → path
-
-**Keybindings**:
-
-- `<C-j>/<C-k>` - Navigate suggestions
-- `<C-Space>` - Trigger completion
-- `<CR>` - Confirm (no auto-select)
+nvim-cmp (`nvim-cmp.lua`) with LuaSnip + friendly-snippets. Sources: nvim_lsp, luasnip, buffer, dictionary, path. Copilot is separate: copilot.lua inline ghost text (`<Tab>` accept, `<M-w>` word, `<M-]>`/`<M-[>` cycle, `<C-]>` dismiss). Keys: `<C-j>/<C-k>` navigate, `<C-Space>` trigger, `<CR>` confirm (no auto-select), `<C-e>` abort.
 
 ## Testing & Debugging
 
-### Testing (Neotest)
+- **vim-test** (`vim-test.lua`): `<leader>tt` nearest, `tf` file, `ta` suite, `tl` last, `tv` visit. Strategy `neovim_sticky`; cargo-nextest transform; Swift uses the custom `XcodeTest` runner or SwiftPM.
+- **nvim-dap + dap-ui** (`debugging.lua`): `<leader>dt` breakpoint, `<leader>dc` continue, `<leader>du` toggle UI. Dart adapter configured in `flutter-tools.lua`.
 
-- Adapter: neotest-dart for Flutter
-- Config: `lua/rockem/plugins/neotest.lua`
+## Markdown
 
-### Debugging (nvim-dap)
+- **render-markdown.nvim** renders markdown in-buffer.
+- **diagram.nvim + image.nvim** (`diagram.lua`) render mermaid blocks as images via `mmdc` and the kitty graphics protocol (Ghostty). Requires `mmdc` and `magick` on PATH. Auto-renders on `InsertLeave`/`BufWinEnter`; `<leader>md` opens the diagram under the cursor in its own tab.
 
-- Config: `lua/rockem/plugins/debugging.lua`
-- Keybindings:
-  - `<leader>dt` - Toggle breakpoint
-  - `<leader>dc` - Continue/start debugging
+## Other keymaps
 
-## Keybinding Organization
+Leader and localleader are `<Space>`. Global maps are in `config/keymaps.lua`; plugin maps live in each plugin file. Update `which-key.lua` group labels when adding a new `<leader>` prefix.
 
-### Global Keybindings
+- `<leader>e` nvim-tree
+- `<leader>f` Telescope: `ff` files, `fr` recent, `fg` grep, `fc` config, `fb` buffers
+- `<leader>g` git: `gp` preview hunk, `gb` blame, `gd`/`gh`/`gH`/`gq` Diffview, `gc` CodeDiff working tree, `gC` staged, `gm` branch vs main, `gf` file history, `gF` repo history (codediff.nvim, `codediff.lua`; downloads its diff library on first use)
+- `<leader>h` harpoon
+- `<leader>x` Trouble
+- `<leader>s` treesitter swap
+- `<leader>U` undo tree (Telescope), `<leader>R` registers, `<leader>cp` pre-commit
+- `<C-Tab>` alternate buffer
 
-Defined in `lua/rockem/config/keymaps.lua`:
+## Notes
 
-**Leaders**: `<Space>` for both leader and localleader
-
-**Key groups**:
-
-- `<leader>l` - Lazy plugin manager
-- `<leader>e` - File explorer (nvim-tree)
-- `<leader>f` - Fuzzy find (Telescope): `ff` files, `fr` recent, `fg` grep, `fc` config, `fb` buffers
-- `<leader>g` - Git: `gp` preview hunk, `gb` blame
-- `<leader>U` - Undo tree
-- `<leader>R` - Registers
-- `<C-Tab>` - Next buffer
-- `<C-S-Tab>` - Previous buffer
-
-### Adding Keybindings
-
-- **Global**: Add to `lua/rockem/config/keymaps.lua`
-- **LSP**: Add to `lua/rockem/plugins/common/lsp-attach.lua`
-- **Plugin-specific**: Add in plugin's config function
-- **Group labels**: Update which-key spec in `lua/rockem/plugins/which-key.lua`
-
-## File Structure Reference
-
-```
-/Users/e137126/.config/nvim/
-├── init.lua                           # Entry point
-├── lazy-lock.json                     # Plugin version locks
-├── .stylua.toml                       # Lua formatter config
-└── lua/rockem/
-    ├── config/
-    │   ├── init.lua                  # Loads keymaps, options, lazy
-    │   ├── keymaps.lua               # Global keybindings
-    │   ├── options.lua               # Vim options/settings
-    │   └── lazy.lua                  # Plugin manager bootstrap
-    └── plugins/
-        ├── common/
-        │   └── lsp-attach.lua        # Shared LSP keybindings
-        ├── lspconfig.lua             # LSP server configuration
-        ├── mason.lua                 # LSP/tool installer
-        ├── formatting.lua            # Format-on-save config
-        ├── nvim-cmp.lua              # Completion engine
-        ├── nvim-treesitter.lua       # Syntax highlighting
-        ├── telescope.lua             # Fuzzy finder
-        ├── debugging.lua             # DAP configuration
-        ├── neotest.lua               # Testing framework
-        └── [other plugin configs]
-```
-
-## Important Notes
-
-- **Personal namespace**: All Lua modules under `rockem.*` (not a standard name)
-- **Lazy loading**: Most plugins won't load until needed - improves startup time
-- **Auto-save**: Enabled via auto-save.nvim plugin
-- **Treesitter**: 18+ languages configured for syntax highlighting
-- **Git integration**: gitsigns.nvim for inline git status
+- Colorscheme: catppuccin (mocha). Sessions: auto-session. Statusline: lualine.
+- Treesitter uses the `main` branch API (`require("nvim-treesitter").setup()` takes only `install_dir`); parsers install on startup and highlighting starts via a `FileType` autocmd.
+- Neovim state/log files (`.nvimlog`) are git-ignored.

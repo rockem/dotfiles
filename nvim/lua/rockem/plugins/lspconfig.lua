@@ -1,11 +1,9 @@
 vim.pack.add({
 	"https://github.com/antosha417/nvim-lsp-file-operations",
 	"https://github.com/neovim/nvim-lspconfig",
-	"https://github.com/chrisgrieser/nvim-lsp-endhints",
 })
 
 require("lsp-file-operations").setup()
-require("lsp-endhints").setup()
 
 -- Disable stylua LSP (it's a formatter, not an LSP server)
 vim.lsp.enable("stylua", false)
@@ -15,6 +13,7 @@ vim.lsp.enable("ts_ls")
 vim.lsp.enable("astro")
 
 vim.lsp.enable("basedpyright")
+vim.lsp.enable("ruff")
 vim.lsp.enable("zls")
 vim.lsp.enable("sourcekit")
 
@@ -22,9 +21,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 	callback = require("rockem.plugins.common.lsp-attach").on_attach,
 })
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
 
 -- Configure lua_ls for Neovim
 vim.lsp.config("lua_ls", {
